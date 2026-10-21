@@ -31,6 +31,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const { user } = useAuth();
 
   // Accordion states (default to closed as requested)
+  const [registryOpen, setRegistryOpen] = useState(false);
+  const [cancellationsSubOpen, setCancellationsSubOpen] = useState(false);
   const [addressCreationOpen, setAddressCreationOpen] = useState(false);
   const [currentAddressModOpen, setCurrentAddressModOpen] = useState(false);
   const [newAddressSubOpen, setNewAddressSubOpen] = useState(false);
@@ -96,22 +98,135 @@ export const Sidebar: React.FC<SidebarProps> = ({
             REYESTR VA MANZILLAR
           </div>
 
-          {/* 📍 Reyestr (Direct link, no chevron) */}
-          <button
-            onClick={() => setCurrentTab('registry')}
-            className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl text-xs transition-colors ${
-              currentTab === 'registry'
-                ? 'bg-blue-50/80 text-blue-700 font-semibold'
-                : 'text-slate-700 hover:bg-slate-50 font-medium'
-            }`}
-          >
-            <MapPin
-              className={`w-4 h-4 flex-shrink-0 ${
-                currentTab === 'registry' ? 'text-blue-600' : 'text-slate-500'
+          {/* 📍 Reyestr (Akkordeon - bosganda 2 ta bo'lim ochiladi) */}
+          <div className="space-y-0.5">
+            <button
+              onClick={() => setRegistryOpen(!registryOpen)}
+              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-colors ${
+                currentTab === 'registry' || currentTab.startsWith('cancellations')
+                  ? 'text-blue-600 bg-blue-50/60 font-semibold'
+                  : 'text-slate-700 hover:bg-slate-50'
               }`}
-            />
-            <span className="truncate">Reyestr</span>
-          </button>
+            >
+              <div className="flex items-center space-x-3">
+                <MapPin
+                  className={`w-4 h-4 flex-shrink-0 ${
+                    currentTab === 'registry' || currentTab.startsWith('cancellations')
+                      ? 'text-blue-600'
+                      : 'text-slate-500'
+                  }`}
+                />
+                <span className="font-medium text-slate-800">Reyestr</span>
+              </div>
+              {registryOpen ? (
+                <ChevronUp className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+              ) : (
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+              )}
+            </button>
+
+            {/* Reyestr ichidagi 2 ta bo'lim: */}
+            {registryOpen && (
+              <div className="pl-3 pr-1 pt-1 space-y-1.5 border-l-2 border-slate-100 ml-3.5 mt-0.5 text-slate-700">
+                {/* 1. Manzil to'g'risidagi ma'lumotlarni olish */}
+                <div>
+                  <button
+                    onClick={() => setCurrentTab('registry')}
+                    className={`w-full text-left px-2 py-1.5 rounded-lg transition-colors text-xs font-medium flex items-center justify-between ${
+                      currentTab === 'registry'
+                        ? 'bg-blue-50 text-blue-700 font-semibold border border-blue-200'
+                        : 'hover:bg-slate-50 text-slate-800'
+                    }`}
+                  >
+                    <span className="leading-tight">
+                      Manzil to'g'risidagi ma'lumotlarni olish
+                    </span>
+                  </button>
+                </div>
+
+                {/* 2. Manzillarni o'chirish */}
+                <div className="space-y-0.5">
+                  <button
+                    onClick={() => setCancellationsSubOpen(!cancellationsSubOpen)}
+                    className="w-full flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-slate-50 transition-colors text-xs text-slate-800"
+                  >
+                    <span className="text-left font-medium leading-tight">
+                      Manzillarni o'chirish
+                    </span>
+                    {cancellationsSubOpen ? (
+                      <ChevronUp className="w-3 h-3 text-slate-400 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-3 h-3 text-slate-400 flex-shrink-0" />
+                    )}
+                  </button>
+
+                  {cancellationsSubOpen && (
+                    <div className="pl-3 space-y-0.5 pt-0.5 border-l border-slate-100 ml-2">
+                      <button
+                        onClick={() => setCurrentTab('cancellations-new')}
+                        className={`w-full flex items-center justify-between px-2 py-1 rounded transition-colors text-[11px] ${
+                          currentTab === 'cancellations-new' ? 'bg-slate-100 font-bold text-blue-600' : 'hover:bg-slate-50'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-1.5">
+                          <span className="text-slate-400">•</span>
+                          <span>Yangi arizalar</span>
+                        </div>
+                        <span className="w-4 h-4 rounded-full bg-[#0ea5e9] text-white text-[9px] font-bold flex items-center justify-center shadow-2xs">
+                          1
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => setCurrentTab('cancellations-in-progress')}
+                        className={`w-full flex items-center justify-between px-2 py-1 rounded transition-colors text-[11px] ${
+                          currentTab === 'cancellations-in-progress' ? 'bg-slate-100 font-bold text-blue-600' : 'hover:bg-slate-50'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-1.5">
+                          <span className="text-slate-400">•</span>
+                          <span>Jarayonda</span>
+                        </div>
+                        <span className="w-4 h-4 rounded-full bg-[#0ea5e9] text-white text-[9px] font-bold flex items-center justify-center shadow-2xs">
+                          1
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => setCurrentTab('cancellations-completed')}
+                        className={`w-full flex items-center justify-between px-2 py-1 rounded transition-colors text-[11px] ${
+                          currentTab === 'cancellations-completed' ? 'bg-slate-100 font-bold text-blue-600' : 'hover:bg-slate-50'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-1.5">
+                          <span className="text-slate-400">•</span>
+                          <span>Yakunlangan</span>
+                        </div>
+                        <span className="w-4 h-4 rounded-full bg-[#0ea5e9] text-white text-[9px] font-bold flex items-center justify-center shadow-2xs">
+                          2
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => setCurrentTab('cancellations-rejected')}
+                        className={`w-full flex items-center justify-between px-2 py-1 rounded transition-colors text-[11px] ${
+                          currentTab === 'cancellations-rejected' ? 'bg-slate-100 font-bold text-rose-600' : 'hover:bg-slate-50'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-1.5">
+                          <span className="text-slate-400">•</span>
+                          <span>Rad etilgan</span>
+                        </div>
+                        <span className="w-4 h-4 rounded-full bg-[#0ea5e9] text-white text-[9px] font-bold flex items-center justify-center shadow-2xs">
+                          1
+                        </span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* 📄 Manzil yaratish va o'zgartirish (Accordion) */}
           <div>
