@@ -10,22 +10,29 @@ import {
   CertificateData,
   UserRole,
 } from '../types';
+import { handleMockRequest } from './mockStorage';
 
 const BASE_URL = '/api';
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${BASE_URL}${url}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-    ...options,
-  });
-  if (!res.ok) {
-    const errorData = await res.json().catch(() => ({}));
-    throw new Error(errorData.message || `HTTP xatosi: ${res.status}`);
+  try {
+    const res = await fetch(`${BASE_URL}${url}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...options?.headers,
+      },
+      ...options,
+    });
+    const contentType = res.headers.get('content-type');
+    if (res.ok && contentType && contentType.includes('application/json')) {
+      return await res.json();
+    }
+    // If backend is not available (e.g. static host like Netlify returning 404 or index.html)
+    return handleMockRequest(url, options) as T;
+  } catch (err) {
+    // Network error or fetch failed -> fallback to mock storage seamlessly
+    return handleMockRequest(url, options) as T;
   }
-  return res.json();
 }
 
 export const api = {

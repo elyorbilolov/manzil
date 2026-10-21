@@ -1,0 +1,1665 @@
+{
+  "users": [
+    {
+      "id": "user-admin",
+      "pinfl": "31201880010023",
+      "fullName": "Abdullayev Otabek Shavkatovich",
+      "email": "admin@kadastr.uz",
+      "phone": "+998 71 202-01-23",
+      "role": "ADMIN",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "department": "Raqamli texnologiyalar boshqarmasi",
+      "isActive": true,
+      "termsAccepted": true,
+      "createdAt": "2026-01-10T09:00:00Z"
+    },
+    {
+      "id": "user-respublika",
+      "pinfl": "31505850020045",
+      "fullName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "email": "respublika.mm@kadastr.uz",
+      "phone": "+998 71 202-55-76",
+      "role": "RESPUBLIKA_DKP_MM",
+      "region": "Respublika",
+      "district": "Bosh boshqarma",
+      "department": "Davlat kadastrlari palatasi Respublika apparati",
+      "isActive": true,
+      "termsAccepted": true,
+      "createdAt": "2026-01-10T09:00:00Z"
+    },
+    {
+      "id": "user-hudud",
+      "pinfl": "32009890030067",
+      "fullName": "Turg'unov Xurshidbek Anvarovich",
+      "email": "hudud.mm@kadastr.uz",
+      "phone": "+998 90 123-45-67",
+      "role": "HUDUD_DKP_MM",
+      "region": "Toshkent shahri",
+      "district": "Hududiy boshqarma",
+      "department": "Toshkent shahar Davlat kadastrlari palatasi",
+      "isActive": true,
+      "termsAccepted": true,
+      "createdAt": "2026-01-12T10:00:00Z"
+    },
+    {
+      "id": "user-filial-head",
+      "pinfl": "32211900040089",
+      "fullName": "Omonov Sarvar Davronovich",
+      "email": "filial.rahbar@kadastr.uz",
+      "phone": "+998 93 555-44-33",
+      "role": "FILIAL_RAHBARI_DKP",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "department": "Chilonzor tumani filiali rahbariyati",
+      "isActive": true,
+      "termsAccepted": true,
+      "createdAt": "2026-01-15T08:30:00Z"
+    },
+    {
+      "id": "user-filial-mm",
+      "pinfl": "32502930050011",
+      "fullName": "Bo'riyev Komiljon Ergashovich",
+      "email": "filial.mm@kadastr.uz",
+      "phone": "+998 97 777-88-99",
+      "role": "FILIAL_DKP_MM",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "department": "Chilonzor tumani filiali manzil berish bo'limi",
+      "isActive": true,
+      "termsAccepted": true,
+      "createdAt": "2026-01-15T08:30:00Z"
+    },
+    {
+      "id": "user-inspector",
+      "pinfl": "31804910060033",
+      "fullName": "Karimov Jasur Nematovich",
+      "email": "nazoratchi@kadastr.uz",
+      "phone": "+998 99 333-22-11",
+      "role": "INSPECTOR",
+      "region": "Respublika",
+      "district": "Nazorat boshqarmasi",
+      "department": "Monitoring va hisobotlar boshqarmasi",
+      "isActive": true,
+      "termsAccepted": true,
+      "createdAt": "2026-01-20T11:00:00Z"
+    },
+    {
+      "id": "user-citizen",
+      "pinfl": "30101950070055",
+      "fullName": "Yo'ldoshev Alisher Farhodovich",
+      "email": "fuqaro@oneid.uz",
+      "phone": "+998 90 987-65-43",
+      "role": "CITIZEN",
+      "region": "Toshkent shahri",
+      "district": "Yunusobod tumani",
+      "isActive": true,
+      "termsAccepted": true,
+      "createdAt": "2026-02-01T14:20:00Z"
+    }
+  ],
+  "addresses": [
+    {
+      "id": "addr-1792498623828",
+      "geocode": "UZ-TAS-CHI-2026-000540",
+      "cadastreNumber": "10:04:06:01:01:0077",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100115",
+      "planningStructureType": "ishlab_chiqarish_maydoni",
+      "planningStructureName": "Chilonzor sanoat zonasi",
+      "streetType": "magistral",
+      "streetName": "Katta Halqa Yo'li",
+      "houseNumber": "15/2",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Chilonzor sanoat zonasi, Katta Halqa Yo'li, 15/2-uy",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чилонзор саноат зонаси, Катта Ҳалқа Йўли, 15/2-уй",
+      "fullAddressRu": "г. Ташкент, Chilonzor район, Chilonzor sanoat zonasi, ул. Katta Halqa Yo'li, д. 15/2",
+      "objectType": "noturar",
+      "lat": 41.2645,
+      "lng": 69.1952,
+      "entrancePoints": [
+        {
+          "id": "ep-app-4",
+          "type": "main",
+          "lat": 41.26455,
+          "lng": 69.19522,
+          "name": "Yuk tashish darvozasi",
+          "isOnBoundary": true
+        }
+      ],
+      "connectingLine": {
+        "id": "conn-app-4",
+        "points": [
+          [
+            41.26455,
+            69.19522
+          ],
+          [
+            41.26495,
+            69.19522
+          ]
+        ],
+        "lengthMeters": 44.2,
+        "isValid": true,
+        "targetStreetName": "Katta Halqa Yo'li yordamchi yo'lagi"
+      },
+      "status": "cancelled",
+      "legalGrounds": "Ariza APP-2026-00104 asosida",
+      "createdAt": "2026-10-20T12:17:03.828Z",
+      "updatedAt": "2026-10-20T12:17:30.236Z",
+      "createdBy": "Mirmaqsudov Mirkomil Bahodirovich",
+      "history": [
+        {
+          "timestamp": "2026-10-20T12:17:03.828Z",
+          "action": "C-01 reglamenti asosida ro'yxatga olindi",
+          "changedBy": "Mirmaqsudov Mirkomil Bahodirovich",
+          "role": "SYSTEM",
+          "details": "Ariza raqami: APP-2026-00104"
+        },
+        {
+          "timestamp": "2026-10-20T12:17:28.181Z",
+          "action": "UZKAD C-03 orqali avtomatik bekor qilindi",
+          "changedBy": "UZKAD Integratsion Shlyuz",
+          "role": "SYSTEM",
+          "details": "Hujjat: Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26"
+        },
+        {
+          "timestamp": "2026-10-20T12:17:29.556Z",
+          "action": "UZKAD C-03 orqali avtomatik bekor qilindi",
+          "changedBy": "UZKAD Integratsion Shlyuz",
+          "role": "SYSTEM",
+          "details": "Hujjat: Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26"
+        },
+        {
+          "timestamp": "2026-10-20T12:17:30.236Z",
+          "action": "UZKAD C-03 orqali avtomatik bekor qilindi",
+          "changedBy": "UZKAD Integratsion Shlyuz",
+          "role": "SYSTEM",
+          "details": "Hujjat: Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26"
+        }
+      ],
+      "statusReason": "UZKAD avtomatik o'chirish: DEMOLISHED"
+    },
+    {
+      "id": "addr-1792498621172",
+      "geocode": "UZ-TAS-CHI-2026-000511",
+      "cadastreNumber": "10:04:05:01:03:0033",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100097",
+      "planningStructureType": "hudud",
+      "planningStructureName": "Do'mbrobod mahallasi",
+      "streetType": "berk_kocha",
+      "streetName": "Do'mbrobod 3-tor ko'cha",
+      "houseNumber": "12",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Do'mbrobod mahallasi, Do'mbrobod 3-tor ko'cha, 12-uy",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Дўмбробод маҳалласи, Дўмбробод 3-тор кўча, 12-уй",
+      "fullAddressRu": "г. Ташкент, Chilonzor район, Do'mbrobod mahallasi, ул. Do'mbrobod 3-tor ko'cha, д. 12",
+      "objectType": "turar_joy",
+      "lat": 41.2715,
+      "lng": 69.2085,
+      "entrancePoints": [
+        {
+          "id": "ep-app-3",
+          "type": "main",
+          "lat": 41.27155,
+          "lng": 69.20852,
+          "name": "Hovli darvozasi",
+          "isOnBoundary": true
+        }
+      ],
+      "connectingLine": {
+        "id": "conn-app-3",
+        "points": [
+          [
+            41.27155,
+            69.20852
+          ],
+          [
+            41.27185,
+            69.20852
+          ]
+        ],
+        "lengthMeters": 33.5,
+        "isValid": true,
+        "targetStreetName": "Do'mbrobod berk ko'chasi"
+      },
+      "status": "active",
+      "legalGrounds": "Ariza APP-2026-00103 asosida",
+      "createdAt": "2026-10-20T12:17:01.172Z",
+      "updatedAt": "2026-10-20T12:17:01.172Z",
+      "createdBy": "Mirmaqsudov Mirkomil Bahodirovich",
+      "history": [
+        {
+          "timestamp": "2026-10-20T12:17:01.172Z",
+          "action": "C-01 reglamenti asosida ro'yxatga olindi",
+          "changedBy": "Mirmaqsudov Mirkomil Bahodirovich",
+          "role": "SYSTEM",
+          "details": "Ariza raqami: APP-2026-00103"
+        }
+      ]
+    },
+    {
+      "id": "addr-1792498618436",
+      "geocode": "UZ-TAS-CHI-2026-000492",
+      "cadastreNumber": "10:04:01:04:02:0110",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100115",
+      "planningStructureType": "mavze",
+      "planningStructureName": "Chilonzor 3-mavze",
+      "streetType": "kocha",
+      "streetName": "Qatortol ko'chasi",
+      "houseNumber": "25-uy",
+      "unitNumber": "Ofis 401",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Chilonzor 3-mavze, Qatortol ko'chasi, 25-uy-uy, Ofis 401-xonadon/obyekt",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чилонзор 3-мавзе, Қатортол кўчаси, 25-уй-уй, Офис 401-хонадон/обйект",
+      "fullAddressRu": "г. Ташкент, Chilonzor район, Chilonzor 3-mavze, ул. Qatortol , д. 25-uy, пом./кв. Ofis 401",
+      "objectType": "noturar",
+      "lat": 41.2821,
+      "lng": 69.2234,
+      "entrancePoints": [
+        {
+          "id": "ep-app-2",
+          "type": "main",
+          "lat": 41.28215,
+          "lng": 69.22345,
+          "name": "Biznes markaz bosh kirishi",
+          "isOnBoundary": true
+        }
+      ],
+      "status": "active",
+      "legalGrounds": "Ariza APP-2026-00102 asosida",
+      "createdAt": "2026-10-20T12:16:58.436Z",
+      "updatedAt": "2026-10-20T12:16:58.436Z",
+      "createdBy": "Moliya / Bank to'lov shlyuzi",
+      "history": [
+        {
+          "timestamp": "2026-10-20T12:16:58.436Z",
+          "action": "C-01 reglamenti asosida ro'yxatga olindi",
+          "changedBy": "Moliya / Bank to'lov shlyuzi",
+          "role": "SYSTEM",
+          "details": "Ariza raqami: APP-2026-00102"
+        }
+      ]
+    },
+    {
+      "id": "addr-1792498611956",
+      "geocode": "UZ-TAS-CHI-2026-000021",
+      "cadastreNumber": "10:04:03:02:01:0048",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100097",
+      "planningStructureType": "mavze",
+      "planningStructureName": "Chilonzor 9-mavze",
+      "streetType": "kocha",
+      "streetName": "Lutfiy ko'chasi",
+      "houseNumber": "18-B",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Chilonzor 9-mavze, Lutfiy ko'chasi, 18-B-uy",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чилонзор 9-мавзе, Лутфий кўчаси, 18-Б-уй",
+      "fullAddressRu": "г. Ташкент, Chilonzor район, Chilonzor 9-mavze, ул. Lutfiy , д. 18-B",
+      "objectType": "turar_joy",
+      "lat": 41.2789,
+      "lng": 69.2145,
+      "boundaryPolygon": [
+        [
+          41.2792,
+          69.2141
+        ],
+        [
+          41.2793,
+          69.215
+        ],
+        [
+          41.2786,
+          69.2151
+        ],
+        [
+          41.2785,
+          69.2142
+        ]
+      ],
+      "entrancePoints": [
+        {
+          "id": "ep-app-1",
+          "type": "main",
+          "lat": 41.27925,
+          "lng": 69.21455,
+          "name": "Asosiy kirish eshigi",
+          "isOnBoundary": true
+        }
+      ],
+      "status": "active",
+      "legalGrounds": "Ariza APP-2026-00101 asosida",
+      "createdAt": "2026-10-20T12:16:51.956Z",
+      "updatedAt": "2026-10-20T12:16:51.956Z",
+      "createdBy": "Mirmaqsudov Mirkomil Bahodirovich",
+      "history": [
+        {
+          "timestamp": "2026-10-20T12:16:51.956Z",
+          "action": "C-01 reglamenti asosida ro'yxatga olindi",
+          "changedBy": "Mirmaqsudov Mirkomil Bahodirovich",
+          "role": "SYSTEM",
+          "details": "Ariza raqami: APP-2026-00101"
+        }
+      ]
+    },
+    {
+      "id": "addr-1792497709025",
+      "geocode": "UZ-TAS-CHI-2026-000020",
+      "cadastreNumber": "10:04:02:01:01:9999",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100097",
+      "streetType": "kocha",
+      "streetName": "Cho'ponota ko'chasi",
+      "houseNumber": "100",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Cho'ponota ko'chasi, 100-uy",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чўпонота кўчаси, 100-уй",
+      "fullAddressRu": "г. Ташкент, Chilonzor район, ул. Cho'ponota , д. 100",
+      "objectType": "turar_joy",
+      "lat": 41.2858,
+      "lng": 69.2036,
+      "boundaryPolygon": [
+        [
+          41.286,
+          69.203
+        ],
+        [
+          41.2861,
+          69.204
+        ],
+        [
+          41.2853,
+          69.2041
+        ],
+        [
+          41.2852,
+          69.2031
+        ]
+      ],
+      "entrancePoints": [
+        {
+          "id": "ep-1",
+          "name": "Asosiy kirish",
+          "isOnBoundary": true,
+          "type": "main",
+          "lat": 41.2858,
+          "lng": 69.2036
+        }
+      ],
+      "connectingLine": {
+        "isValid": true,
+        "lengthMeters": 22,
+        "id": "conn-1",
+        "points": [
+          "41.2858 69.2036",
+          "41.286 69.2036"
+        ]
+      },
+      "status": "cancelled",
+      "legalGrounds": "Ariza APP-2026-00105 asosida",
+      "createdAt": "2026-10-20T12:01:49.025Z",
+      "updatedAt": "2026-10-20T12:02:10.820Z",
+      "createdBy": "Mirmaqsudov Mirkomil (Respublika DKP MM)",
+      "history": [
+        {
+          "timestamp": "2026-10-20T12:01:49.025Z",
+          "action": "C-01 reglamenti asosida ro'yxatga olindi",
+          "changedBy": "Mirmaqsudov Mirkomil (Respublika DKP MM)",
+          "role": "SYSTEM",
+          "details": "Ariza raqami: APP-2026-00105"
+        },
+        {
+          "timestamp": "2026-10-20T12:02:10.820Z",
+          "action": "UZKAD C-03 orqali avtomatik bekor qilindi",
+          "changedBy": "UZKAD Integratsion Shlyuz",
+          "role": "SYSTEM",
+          "details": "Hujjat: Toshkent shahar buzish dalolatnomasi ? 55"
+        }
+      ],
+      "statusReason": "UZKAD avtomatik o'chirish: DEMOLISHED"
+    },
+    {
+      "id": "addr-001",
+      "geocode": "UZ-TAS-CHI-2026-000001",
+      "cadastreNumber": "10:04:02:01:01:0024",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100097",
+      "planningStructureType": "mavze",
+      "planningStructureName": "Chilonzor-M mavzesi",
+      "streetType": "kocha",
+      "streetName": "Cho'ponota ko'chasi",
+      "houseNumber": "6-В",
+      "objectType": "noturar",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Chilonzor-M mavzesi, Cho'ponota ko'chasi, 6-В uy",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чилонзор-М мавзеси, Чўпонота кўчаси, 6-В уй",
+      "fullAddressRu": "г. Ташкент, Чиланзарский район, массив Чиланзар-М, ул. Чупонота, дом 6-В",
+      "lat": 41.28582,
+      "lng": 69.20364,
+      "boundaryPolygon": [
+        [
+          41.2861,
+          69.2032
+        ],
+        [
+          41.2862,
+          69.2041
+        ],
+        [
+          41.2855,
+          69.2042
+        ],
+        [
+          41.2854,
+          69.2033
+        ]
+      ],
+      "entrancePoints": [
+        {
+          "id": "ep-001",
+          "type": "main",
+          "lat": 41.28615,
+          "lng": 69.20365,
+          "name": "Bosh kirish darvozasi",
+          "isOnBoundary": true
+        },
+        {
+          "id": "ep-002",
+          "type": "secondary",
+          "lat": 41.28545,
+          "lng": 69.20375,
+          "name": "Xizmat ko'rsatish eshigi",
+          "isOnBoundary": true
+        }
+      ],
+      "connectingLine": {
+        "id": "conn-001",
+        "points": [
+          [
+            41.28615,
+            69.20365
+          ],
+          [
+            41.28635,
+            69.20365
+          ]
+        ],
+        "lengthMeters": 22.4,
+        "isValid": true,
+        "targetStreetName": "Cho'ponota ko'chasi"
+      },
+      "status": "active",
+      "legalGrounds": "Vazirlar Mahkamasining 2018 yil 14 dekabrdagi 1010-son qarori",
+      "createdAt": "2026-01-15T10:00:00Z",
+      "updatedAt": "2026-01-15T10:00:00Z",
+      "createdBy": "Omonov Sarvar Davronovich (Filial rahbari DKP)",
+      "history": [
+        {
+          "timestamp": "2026-01-15T10:00:00Z",
+          "action": "Manzil ro'yxatga olindi va geokod biriktirildi",
+          "changedBy": "Omonov Sarvar Davronovich",
+          "role": "FILIAL_RAHBARI_DKP",
+          "details": "Dastlabki ro'yxatga olish, geokod UZ-TAS-CHI-2026-000001 biriktirildi"
+        }
+      ]
+    },
+    {
+      "id": "addr-002",
+      "geocode": "UZ-TAS-YAK-2026-000108",
+      "cadastreNumber": "10:08:01:03:04:0052",
+      "region": "Toshkent shahri",
+      "district": "Yakkasaroy tumani",
+      "postalCode": "100100",
+      "planningStructureType": "hudud",
+      "planningStructureName": "Rakat mahallasi",
+      "streetType": "shoh_kocha",
+      "streetName": "Shota Rustaveli shoh ko'chasi",
+      "houseNumber": "42",
+      "blockNumber": "A",
+      "unitNumber": "14",
+      "objectType": "turar_joy",
+      "fullAddressUz": "Toshkent shahri, Yakkasaroy tumani, Rakat mahallasi, Shota Rustaveli shoh ko'chasi, 42-A uy, 14-xonadon",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Яккасарой тумани, Ракат маҳалласи, Шота Руставели шоҳ кўчаси, 42-А уй, 14-хонадон",
+      "fullAddressRu": "г. Ташкент, Яккасарайский район, махалля Ракат, проспект Шота Руставели, д. 42-А, кв. 14",
+      "lat": 41.2915,
+      "lng": 69.2458,
+      "boundaryPolygon": [
+        [
+          41.2918,
+          69.2454
+        ],
+        [
+          41.2919,
+          69.2462
+        ],
+        [
+          41.2912,
+          69.2463
+        ],
+        [
+          41.2911,
+          69.2455
+        ]
+      ],
+      "entrancePoints": [
+        {
+          "id": "ep-003",
+          "type": "main",
+          "lat": 41.29185,
+          "lng": 69.2458,
+          "name": "Asosiy kirish eshigi (1-podyezd)",
+          "isOnBoundary": true
+        }
+      ],
+      "connectingLine": {
+        "id": "conn-002",
+        "points": [
+          [
+            41.29185,
+            69.2458
+          ],
+          [
+            41.29202,
+            69.2458
+          ]
+        ],
+        "lengthMeters": 18.9,
+        "isValid": true,
+        "targetStreetName": "Shota Rustaveli shoh ko'chasi"
+      },
+      "status": "active",
+      "legalGrounds": "Toshkent shahar hokimi qarori № 412",
+      "createdAt": "2026-01-20T12:30:00Z",
+      "updatedAt": "2026-01-20T12:30:00Z",
+      "createdBy": "Filial rahbari DKP"
+    },
+    {
+      "id": "addr-003",
+      "geocode": "UZ-SAM-SAM-2026-000201",
+      "cadastreNumber": "14:01:04:01:02:0089",
+      "region": "Samarqand viloyati",
+      "district": "Samarqand shahri",
+      "postalCode": "140100",
+      "planningStructureType": "hudud",
+      "planningStructureName": "Registon mahallasi",
+      "streetType": "kocha",
+      "streetName": "Registon ko'chasi",
+      "houseNumber": "1",
+      "objectType": "noturar",
+      "fullAddressUz": "Samarqand viloyati, Samarqand shahri, Registon mahallasi, Registon ko'chasi, 1-uy",
+      "fullAddressUzCyrillic": "Самарқанд вилояти, Самарқанд шаҳри, Регистон маҳалласи, Регистон кўчаси, 1-уй",
+      "fullAddressRu": "Самаркандская область, г. Самарканд, махалля Регистан, ул. Регистан, д. 1",
+      "lat": 39.6547,
+      "lng": 66.9758,
+      "boundaryPolygon": [
+        [
+          39.6552,
+          66.9752
+        ],
+        [
+          39.6553,
+          66.9765
+        ],
+        [
+          39.6542,
+          66.9766
+        ],
+        [
+          39.6541,
+          66.9753
+        ]
+      ],
+      "entrancePoints": [
+        {
+          "id": "ep-004",
+          "type": "main",
+          "lat": 39.65415,
+          "lng": 66.9758,
+          "name": "Asosiy portal kirishi",
+          "isOnBoundary": true
+        }
+      ],
+      "status": "active",
+      "legalGrounds": "Madaniy meros agentligi va Kadastr palatasi ro'yxati",
+      "createdAt": "2026-01-25T14:00:00Z",
+      "updatedAt": "2026-01-25T14:00:00Z",
+      "createdBy": "Samarqand shahar filiali"
+    },
+    {
+      "id": "addr-004",
+      "geocode": "UZ-BUX-BUX-2026-000305",
+      "cadastreNumber": "20:01:02:05:01:0014",
+      "region": "Buxoro viloyati",
+      "district": "Buxoro shahri",
+      "postalCode": "200100",
+      "planningStructureType": "hudud",
+      "planningStructureName": "Labi Hovuz mahallasi",
+      "streetType": "kocha",
+      "streetName": "Naqshband ko'chasi",
+      "houseNumber": "45",
+      "objectType": "turar_joy",
+      "fullAddressUz": "Buxoro viloyati, Buxoro shahri, Labi Hovuz mahallasi, Naqshband ko'chasi, 45-uy",
+      "fullAddressUzCyrillic": "Бухоро вилояти, Бухоро шаҳри, Лаби Ҳовуз маҳалласи, Нақшбанд кўчаси, 45-уй",
+      "fullAddressRu": "Бухарская область, г. Бухара, махалля Ляби Хауз, ул. Накшбанд, д. 45",
+      "lat": 39.7745,
+      "lng": 64.4215,
+      "entrancePoints": [
+        {
+          "id": "ep-005",
+          "type": "main",
+          "lat": 39.77455,
+          "lng": 64.42152,
+          "name": "Hovli darvozasi",
+          "isOnBoundary": true
+        }
+      ],
+      "status": "active",
+      "createdAt": "2026-02-01T11:15:00Z",
+      "updatedAt": "2026-02-01T11:15:00Z",
+      "createdBy": "Buxoro shahar filiali"
+    },
+    {
+      "id": "addr-005",
+      "geocode": "UZ-TAS-YUN-2025-009840",
+      "cadastreNumber": "10:02:04:01:01:0012",
+      "region": "Toshkent shahri",
+      "district": "Yunusobod tumani",
+      "postalCode": "100084",
+      "planningStructureType": "mavze",
+      "planningStructureName": "Yunusobod 4-mavze",
+      "streetType": "kocha",
+      "streetName": "Amir Temur shoh ko'chasi",
+      "houseNumber": "88",
+      "objectType": "noturar",
+      "fullAddressUz": "Toshkent shahri, Yunusobod tumani, Yunusobod 4-mavze, Amir Temur shoh ko'chasi, 88-uy",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Юнусобод тумани, Юнусобод 4-мавзе, Амир Темур шоҳ кўчаси, 88-уй",
+      "fullAddressRu": "г. Ташкент, Юнусабадский район, массив Юнусабад 4, ул. Амира Темура, д. 88",
+      "lat": 41.3412,
+      "lng": 69.2854,
+      "entrancePoints": [],
+      "status": "cancelled",
+      "statusReason": "Obyekt buzilgan (UZKAD xabarnomasi bo'yicha)",
+      "legalGrounds": "Toshkent shahar hokimiyati buzish qarori № 891",
+      "createdAt": "2025-11-10T09:00:00Z",
+      "updatedAt": "2026-02-14T16:00:00Z",
+      "createdBy": "Yunusobod filiali"
+    }
+  ],
+  "applications": [
+    {
+      "id": "app-1792497708961",
+      "applicationNumber": "APP-2026-00105",
+      "source": "MYGOV",
+      "applicantType": "INDIVIDUAL",
+      "applicantName": "Alimov Botirjon",
+      "applicantPinflOrStir": "31804910010077",
+      "applicantPhone": "+998 90 111-22-33",
+      "cadastreNumber": "10:04:02:01:01:9999",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100097",
+      "streetType": "kocha",
+      "streetName": "Cho'ponota ko'chasi",
+      "houseNumber": "100",
+      "objectType": "turar_joy",
+      "lat": 41.2858,
+      "lng": 69.2036,
+      "boundaryPolygon": [
+        [
+          41.286,
+          69.203
+        ],
+        [
+          41.2861,
+          69.204
+        ],
+        [
+          41.2853,
+          69.2041
+        ],
+        [
+          41.2852,
+          69.2031
+        ]
+      ],
+      "entrancePoints": [
+        {
+          "id": "ep-1",
+          "name": "Asosiy kirish",
+          "isOnBoundary": true,
+          "type": "main",
+          "lat": 41.2858,
+          "lng": 69.2036
+        }
+      ],
+      "connectingLine": {
+        "isValid": true,
+        "lengthMeters": 22,
+        "id": "conn-1",
+        "points": [
+          "41.2858 69.2036",
+          "41.286 69.2036"
+        ]
+      },
+      "isPaidService": false,
+      "invoiceAmountUzs": 0,
+      "isPaid": true,
+      "stage": "APPROVED",
+      "timeline": [
+        {
+          "stage": "SUBMITTED",
+          "timestamp": "2026-10-20T12:01:48.961Z",
+          "actorName": "Alimov Botirjon",
+          "actorRole": "APPLICANT",
+          "comment": "Manzil berish arizasi MYGOV qabul qilindi"
+        },
+        {
+          "stage": "FILIAL_REVIEW_COMPLETED",
+          "timestamp": "2026-10-20T12:01:49.002Z",
+          "actorName": "Bo'riyev Komiljon (Filial MM)",
+          "actorRole": "FILIAL_DKP_MM",
+          "comment": "Nuqtalar belgilandi"
+        },
+        {
+          "stage": "SENT_TO_REGION",
+          "timestamp": "2026-10-20T12:01:49.011Z",
+          "actorName": "Omonov Sarvar (Filial rahbari DKP)",
+          "actorRole": "FILIAL_RAHBARI_DKP",
+          "comment": "Filial tasdiqladi"
+        },
+        {
+          "stage": "REGION_AGREED",
+          "timestamp": "2026-10-20T12:01:49.018Z",
+          "actorName": "Turg'unov Xurshidbek (Hudud DKP MM)",
+          "actorRole": "HUDUD_DKP_MM",
+          "comment": "Hudud kelishdi"
+        },
+        {
+          "stage": "COMPLETED",
+          "timestamp": "2026-10-20T12:01:49.026Z",
+          "actorName": "Mirmaqsudov Mirkomil (Respublika DKP MM)",
+          "actorRole": "SYSTEM",
+          "comment": "Manzil muvaffaqiyatli ro'yxatga olindi. Unikal geokod: UZ-TAS-CHI-2026-000020"
+        }
+      ],
+      "createdAt": "2026-10-20T12:01:48.961Z",
+      "updatedAt": "2026-10-20T12:01:49.027Z",
+      "assignedGeocode": "UZ-TAS-CHI-2026-000020",
+      "registeredAddressId": "addr-1792497709025"
+    },
+    {
+      "id": "app-101",
+      "applicationNumber": "APP-2026-00101",
+      "source": "MYGOV",
+      "applicantType": "INDIVIDUAL",
+      "applicantName": "Tolipov Dilshod Baxtiyorovich",
+      "applicantPinflOrStir": "31502900010044",
+      "applicantPhone": "+998 90 321-65-87",
+      "cadastreNumber": "10:04:03:02:01:0048",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100097",
+      "planningStructureType": "mavze",
+      "planningStructureName": "Chilonzor 9-mavze",
+      "streetType": "kocha",
+      "streetName": "Lutfiy ko'chasi",
+      "houseNumber": "18-B",
+      "objectType": "turar_joy",
+      "lat": 41.2789,
+      "lng": 69.2145,
+      "boundaryPolygon": [
+        [
+          41.2792,
+          69.2141
+        ],
+        [
+          41.2793,
+          69.215
+        ],
+        [
+          41.2786,
+          69.2151
+        ],
+        [
+          41.2785,
+          69.2142
+        ]
+      ],
+      "entrancePoints": [
+        {
+          "id": "ep-app-1",
+          "type": "main",
+          "lat": 41.27925,
+          "lng": 69.21455,
+          "name": "Asosiy kirish eshigi",
+          "isOnBoundary": true
+        }
+      ],
+      "isPaidService": false,
+      "isPaid": true,
+      "stage": "APPROVED",
+      "timeline": [
+        {
+          "stage": "SUBMITTED",
+          "timestamp": "2026-02-18T10:15:00Z",
+          "actorName": "Tolipov Dilshod (Ariza beruvchi)",
+          "actorRole": "CITIZEN",
+          "comment": "MyGov orqali yangi qurilgan hovli joyga manzil berish arizasi topshirildi"
+        },
+        {
+          "stage": "FILIAL_REVIEW_COMPLETED",
+          "timestamp": "2026-10-20T12:16:49.108Z",
+          "actorName": "Mirmaqsudov Mirkomil Bahodirovich",
+          "actorRole": "RESPUBLIKA_DKP_MM",
+          "comment": "Kirish nuqtalari tekshirildi, avtomatik manzil berish moduli orqali geokod tayinlandi"
+        },
+        {
+          "stage": "COMPLETED",
+          "timestamp": "2026-10-20T12:16:51.957Z",
+          "actorName": "Mirmaqsudov Mirkomil Bahodirovich",
+          "actorRole": "SYSTEM",
+          "comment": "Manzil muvaffaqiyatli ro'yxatga olindi. Unikal geokod: UZ-TAS-CHI-2026-000021"
+        }
+      ],
+      "createdAt": "2026-02-18T10:15:00Z",
+      "updatedAt": "2026-10-20T12:16:51.959Z",
+      "assignedGeocode": "UZ-TAS-CHI-2026-000021",
+      "registeredAddressId": "addr-1792498611956"
+    },
+    {
+      "id": "app-102",
+      "applicationNumber": "APP-2026-00102",
+      "source": "UZKAD",
+      "applicantType": "LEGAL",
+      "applicantName": "\"ORIENT PROPERTIES\" MChJ",
+      "applicantPinflOrStir": "204892110",
+      "applicantPhone": "+998 71 200-88-77",
+      "cadastreNumber": "10:04:01:04:02:0110",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100115",
+      "planningStructureType": "mavze",
+      "planningStructureName": "Chilonzor 3-mavze",
+      "streetType": "kocha",
+      "streetName": "Qatortol ko'chasi",
+      "houseNumber": "25-uy",
+      "unitNumber": "Ofis 401",
+      "objectType": "noturar",
+      "lat": 41.2821,
+      "lng": 69.2234,
+      "entrancePoints": [
+        {
+          "id": "ep-app-2",
+          "type": "main",
+          "lat": 41.28215,
+          "lng": 69.22345,
+          "name": "Biznes markaz bosh kirishi",
+          "isOnBoundary": true
+        }
+      ],
+      "isPaidService": true,
+      "invoiceNumber": "INV-2026-0089",
+      "invoiceAmountUzs": 68000,
+      "isPaid": true,
+      "stage": "APPROVED",
+      "assignedGeocode": "UZ-TAS-CHI-2026-000492",
+      "timeline": [
+        {
+          "stage": "SUBMITTED",
+          "timestamp": "2026-02-17T09:00:00Z",
+          "actorName": "UZKAD Tizimi",
+          "actorRole": "SYSTEM",
+          "comment": "UZKAD integratsiyasi orqali yangi tijorat obyektiga manzil so'rovi kelib tushdi"
+        },
+        {
+          "stage": "FILIAL_REVIEW",
+          "timestamp": "2026-02-17T14:30:00Z",
+          "actorName": "Bo'riyev Komiljon (Filial MM)",
+          "actorRole": "FILIAL_DKP_MM",
+          "comment": "Kirish nuqtalari tekshirildi, avtomatik manzil moduli orqali geokod tayinlandi va rahbar ko'rib chiqishiga yuborildi"
+        },
+        {
+          "stage": "PAYMENT_PENDING",
+          "timestamp": "2026-10-20T12:16:57.710Z",
+          "actorName": "Mirmaqsudov Mirkomil Bahodirovich",
+          "actorRole": "FILIAL_RAHBARI_DKP",
+          "comment": "Manzil ma'lumotlari tasdiqlandi. Invoys bo'yicha to'lov kutilmoqda"
+        },
+        {
+          "stage": "COMPLETED",
+          "timestamp": "2026-10-20T12:16:58.437Z",
+          "actorName": "Moliya / Bank to'lov shlyuzi",
+          "actorRole": "SYSTEM",
+          "comment": "Manzil muvaffaqiyatli ro'yxatga olindi. Unikal geokod: UZ-TAS-CHI-2026-000492"
+        }
+      ],
+      "createdAt": "2026-02-17T09:00:00Z",
+      "updatedAt": "2026-10-20T12:16:57.710Z",
+      "registeredAddressId": "addr-1792498618436"
+    },
+    {
+      "id": "app-103",
+      "applicationNumber": "APP-2026-00103",
+      "source": "DIRECT",
+      "applicantType": "INDIVIDUAL",
+      "applicantName": "Nazarova Gulnoza Erkinovna",
+      "applicantPinflOrStir": "42205920020019",
+      "applicantPhone": "+998 94 654-32-10",
+      "cadastreNumber": "10:04:05:01:03:0033",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100097",
+      "planningStructureType": "hudud",
+      "planningStructureName": "Do'mbrobod mahallasi",
+      "streetType": "berk_kocha",
+      "streetName": "Do'mbrobod 3-tor ko'cha",
+      "houseNumber": "12",
+      "objectType": "turar_joy",
+      "lat": 41.2715,
+      "lng": 69.2085,
+      "entrancePoints": [
+        {
+          "id": "ep-app-3",
+          "type": "main",
+          "lat": 41.27155,
+          "lng": 69.20852,
+          "name": "Hovli darvozasi",
+          "isOnBoundary": true
+        }
+      ],
+      "connectingLine": {
+        "id": "conn-app-3",
+        "points": [
+          [
+            41.27155,
+            69.20852
+          ],
+          [
+            41.27185,
+            69.20852
+          ]
+        ],
+        "lengthMeters": 33.5,
+        "isValid": true,
+        "targetStreetName": "Do'mbrobod berk ko'chasi"
+      },
+      "isPaidService": false,
+      "isPaid": true,
+      "stage": "APPROVED",
+      "assignedGeocode": "UZ-TAS-CHI-2026-000511",
+      "timeline": [
+        {
+          "stage": "SUBMITTED",
+          "timestamp": "2026-02-16T11:00:00Z",
+          "actorName": "Nazarova Gulnoza",
+          "actorRole": "CITIZEN",
+          "comment": "Ariza qabul qilindi"
+        },
+        {
+          "stage": "FILIAL_REVIEW",
+          "timestamp": "2026-02-16T15:20:00Z",
+          "actorName": "Bo'riyev Komiljon",
+          "actorRole": "FILIAL_DKP_MM",
+          "comment": "Ko'cha bevosita ulanmaganligi sababli 33.5m bog'lovchi yo'lak chizildi"
+        },
+        {
+          "stage": "FILIAL_HEAD_REVIEW",
+          "timestamp": "2026-02-17T11:00:00Z",
+          "actorName": "Omonov Sarvar (Filial rahbari)",
+          "actorRole": "FILIAL_RAHBARI_DKP",
+          "comment": "Bog'lovchi yo'lak mavjudligi sababli Hudud DKP MM kelishuviga yuborildi"
+        },
+        {
+          "stage": "REGION_AGREED",
+          "timestamp": "2026-10-20T12:17:00.508Z",
+          "actorName": "Mirmaqsudov Mirkomil Bahodirovich",
+          "actorRole": "HUDUD_DKP_MM",
+          "comment": "Hududiy boshqarma tomonidan bog'lovchi yo'lak kelishildi"
+        },
+        {
+          "stage": "COMPLETED",
+          "timestamp": "2026-10-20T12:17:01.173Z",
+          "actorName": "Mirmaqsudov Mirkomil Bahodirovich",
+          "actorRole": "SYSTEM",
+          "comment": "Manzil muvaffaqiyatli ro'yxatga olindi. Unikal geokod: UZ-TAS-CHI-2026-000511"
+        }
+      ],
+      "createdAt": "2026-02-16T11:00:00Z",
+      "updatedAt": "2026-10-20T12:17:01.175Z",
+      "registeredAddressId": "addr-1792498621172"
+    },
+    {
+      "id": "app-104",
+      "applicationNumber": "APP-2026-00104",
+      "source": "YIDXP",
+      "applicantType": "LEGAL",
+      "applicantName": "\"TOSHKENT CITY LOGISTICS\" MChJ",
+      "applicantPinflOrStir": "302918273",
+      "applicantPhone": "+998 71 210-90-90",
+      "cadastreNumber": "10:04:06:01:01:0077",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "postalCode": "100115",
+      "planningStructureType": "ishlab_chiqarish_maydoni",
+      "planningStructureName": "Chilonzor sanoat zonasi",
+      "streetType": "magistral",
+      "streetName": "Katta Halqa Yo'li",
+      "houseNumber": "15/2",
+      "objectType": "noturar",
+      "lat": 41.2645,
+      "lng": 69.1952,
+      "entrancePoints": [
+        {
+          "id": "ep-app-4",
+          "type": "main",
+          "lat": 41.26455,
+          "lng": 69.19522,
+          "name": "Yuk tashish darvozasi",
+          "isOnBoundary": true
+        }
+      ],
+      "connectingLine": {
+        "id": "conn-app-4",
+        "points": [
+          [
+            41.26455,
+            69.19522
+          ],
+          [
+            41.26495,
+            69.19522
+          ]
+        ],
+        "lengthMeters": 44.2,
+        "isValid": true,
+        "targetStreetName": "Katta Halqa Yo'li yordamchi yo'lagi"
+      },
+      "isPaidService": true,
+      "invoiceNumber": "INV-2026-0094",
+      "invoiceAmountUzs": 68000,
+      "isPaid": true,
+      "stage": "APPROVED",
+      "assignedGeocode": "UZ-TAS-CHI-2026-000540",
+      "timeline": [
+        {
+          "stage": "SUBMITTED",
+          "timestamp": "2026-02-15T08:00:00Z",
+          "actorName": "YIDXP",
+          "actorRole": "SYSTEM",
+          "comment": "YIDXP orqali kelib tushdi"
+        },
+        {
+          "stage": "FILIAL_REVIEW",
+          "timestamp": "2026-02-15T12:00:00Z",
+          "actorName": "Bo'riyev Komiljon",
+          "actorRole": "FILIAL_DKP_MM",
+          "comment": "Kirish nuqtasi va 44.2m bog'lovchi yo'lak belgilandi"
+        },
+        {
+          "stage": "FILIAL_HEAD_REVIEW",
+          "timestamp": "2026-02-15T16:00:00Z",
+          "actorName": "Omonov Sarvar",
+          "actorRole": "FILIAL_RAHBARI_DKP",
+          "comment": "Viloyatga yuborildi"
+        },
+        {
+          "stage": "REGION_AGREEMENT",
+          "timestamp": "2026-02-16T10:00:00Z",
+          "actorName": "Turg'unov Xurshidbek (Hudud DKP MM)",
+          "actorRole": "HUDUD_DKP_MM",
+          "comment": "Hududiy boshqarma kelishdi, Respublika DKP MM tasdiqlashiga yuborildi"
+        },
+        {
+          "stage": "COMPLETED",
+          "timestamp": "2026-10-20T12:17:03.829Z",
+          "actorName": "Mirmaqsudov Mirkomil Bahodirovich",
+          "actorRole": "SYSTEM",
+          "comment": "Manzil muvaffaqiyatli ro'yxatga olindi. Unikal geokod: UZ-TAS-CHI-2026-000540"
+        }
+      ],
+      "createdAt": "2026-02-15T08:00:00Z",
+      "updatedAt": "2026-10-20T12:17:03.831Z",
+      "registeredAddressId": "addr-1792498623828"
+    }
+  ],
+  "cancellations": [
+    {
+      "id": "can-1792498644758",
+      "requestNumber": "CAN-2026-00052",
+      "addressId": "addr-1792498623828",
+      "geocode": "UZ-TAS-CHI-2026-000540",
+      "fullAddress": "Toshkent shahri, Chilonzor tumani, Chilonzor sanoat zonasi, Katta Halqa Yo'li, 15/2-uy",
+      "cadastreNumber": "10:04:06:01:01:0077",
+      "reason": "Obyekt buzilgan va qayta qurilish rejalashtirilgan",
+      "legalDocumentNumber": "Q-2026/112",
+      "legalDocumentDate": "2026-02-18",
+      "stage": "FILIAL_SUBMITTED",
+      "timeline": [
+        {
+          "stage": "FILIAL_SUBMITTED",
+          "timestamp": "2026-10-20T12:17:24.758Z",
+          "actorName": "Mirmaqsudov Mirkomil Bahodirovich",
+          "actorRole": "FILIAL_DKP_MM",
+          "comment": "Manzilni o'chirish taklifi kiritildi. Asos: Q-2026/112"
+        }
+      ],
+      "createdAt": "2026-10-20T12:17:24.758Z",
+      "updatedAt": "2026-10-20T12:17:24.758Z"
+    },
+    {
+      "id": "can-001",
+      "requestNumber": "CAN-2026-00041",
+      "addressId": "addr-002",
+      "geocode": "UZ-TAS-YAK-2026-000108",
+      "fullAddress": "Toshkent shahri, Yakkasaroy tumani, Rakat mahallasi, Shota Rustaveli shoh ko'chasi, 42-A uy",
+      "cadastreNumber": "10:08:01:03:04:0052",
+      "reason": "Qayta rejalashtirish va yangi qurilish loyihasi munosabati bilan manzilni bekor qilish",
+      "legalDocumentNumber": "Q-2026/84",
+      "legalDocumentDate": "2026-02-10",
+      "stage": "FILIAL_SUBMITTED",
+      "timeline": [
+        {
+          "stage": "FILIAL_SUBMITTED",
+          "timestamp": "2026-02-18T14:00:00Z",
+          "actorName": "Bo'riyev Komiljon",
+          "actorRole": "FILIAL_DKP_MM",
+          "comment": "Qayta qurilish to'g'risidagi qaror asosida manzilni o'chirish taklifi kiritildi"
+        }
+      ],
+      "createdAt": "2026-02-18T14:00:00Z",
+      "updatedAt": "2026-02-18T14:00:00Z"
+    }
+  ],
+  "uzkadEvents": [
+    {
+      "id": "uzkad-evt-1792498650236",
+      "eventId": "UZKAD-EVT-4129",
+      "cadastreNumber": "10:04:06:01:01:0077",
+      "objectDeletionType": "DEMOLISHED",
+      "documentBasis": "Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26",
+      "notifiedAt": "2026-10-20T12:17:30.236Z",
+      "processed": true,
+      "processedAt": "2026-10-20T12:17:30.236Z",
+      "targetAddressId": "addr-1792498623828",
+      "targetGeocode": "UZ-TAS-CHI-2026-000540",
+      "actionTaken": "Manzil avtomatik tarzda bekor qilindi va arxivga o'tkazildi (C-03)"
+    },
+    {
+      "id": "uzkad-evt-1792498649556",
+      "eventId": "UZKAD-EVT-7036",
+      "cadastreNumber": "10:04:06:01:01:0077",
+      "objectDeletionType": "DEMOLISHED",
+      "documentBasis": "Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26",
+      "notifiedAt": "2026-10-20T12:17:29.556Z",
+      "processed": true,
+      "processedAt": "2026-10-20T12:17:29.556Z",
+      "targetAddressId": "addr-1792498623828",
+      "targetGeocode": "UZ-TAS-CHI-2026-000540",
+      "actionTaken": "Manzil avtomatik tarzda bekor qilindi va arxivga o'tkazildi (C-03)"
+    },
+    {
+      "id": "uzkad-evt-1792498648181",
+      "eventId": "UZKAD-EVT-9752",
+      "cadastreNumber": "10:04:06:01:01:0077",
+      "objectDeletionType": "DEMOLISHED",
+      "documentBasis": "Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26",
+      "notifiedAt": "2026-10-20T12:17:28.181Z",
+      "processed": true,
+      "processedAt": "2026-10-20T12:17:28.181Z",
+      "targetAddressId": "addr-1792498623828",
+      "targetGeocode": "UZ-TAS-CHI-2026-000540",
+      "actionTaken": "Manzil avtomatik tarzda bekor qilindi va arxivga o'tkazildi (C-03)"
+    },
+    {
+      "id": "uzkad-evt-1792497730820",
+      "eventId": "UZKAD-EVT-8125",
+      "cadastreNumber": "10:04:02:01:01:9999",
+      "objectDeletionType": "DEMOLISHED",
+      "documentBasis": "Toshkent shahar buzish dalolatnomasi ? 55",
+      "notifiedAt": "2026-10-20T12:02:10.820Z",
+      "processed": true,
+      "processedAt": "2026-10-20T12:02:10.820Z",
+      "targetAddressId": "addr-1792497709025",
+      "targetGeocode": "UZ-TAS-CHI-2026-000020",
+      "actionTaken": "Manzil avtomatik tarzda bekor qilindi va arxivga o'tkazildi (C-03)"
+    },
+    {
+      "id": "uzkad-evt-01",
+      "eventId": "UZKAD-EVT-9921",
+      "cadastreNumber": "10:02:04:01:01:0012",
+      "objectDeletionType": "DEMOLISHED",
+      "documentBasis": "Toshkent shahar hokimiyati buzish qarori № 891",
+      "notifiedAt": "2026-02-14T15:55:00Z",
+      "processed": true,
+      "processedAt": "2026-02-14T16:00:00Z",
+      "targetAddressId": "addr-005",
+      "targetGeocode": "UZ-TAS-YUN-2025-009840",
+      "actionTaken": "Manzil avtomatik tarzda bekor qilindi va arxivga o'tkazildi (C-03)"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1792498650239-773",
+      "timestamp": "2026-10-20T12:17:30.239Z",
+      "category": "SYSTEM",
+      "action": "UZKAD C-03 xabarnomasi qabul qilindi va avtomatik qayta ishlandi",
+      "userName": "UZKAD Integration Gateway",
+      "ip": "::1",
+      "details": "Kadastr: 10:04:06:01:01:0077, Obyekt: UZ-TAS-CHI-2026-000540",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498649559-447",
+      "timestamp": "2026-10-20T12:17:29.559Z",
+      "category": "SYSTEM",
+      "action": "UZKAD C-03 xabarnomasi qabul qilindi va avtomatik qayta ishlandi",
+      "userName": "UZKAD Integration Gateway",
+      "ip": "::1",
+      "details": "Kadastr: 10:04:06:01:01:0077, Obyekt: UZ-TAS-CHI-2026-000540",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498648184-455",
+      "timestamp": "2026-10-20T12:17:28.184Z",
+      "category": "SYSTEM",
+      "action": "UZKAD C-03 xabarnomasi qabul qilindi va avtomatik qayta ishlandi",
+      "userName": "UZKAD Integration Gateway",
+      "ip": "::1",
+      "details": "Kadastr: 10:04:06:01:01:0077, Obyekt: UZ-TAS-CHI-2026-000540",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498644759-716",
+      "timestamp": "2026-10-20T12:17:24.759Z",
+      "category": "DATA_OPERATION",
+      "action": "Manzilni o'chirish taklifi kiritildi (C-02)",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "FILIAL_DKP_MM",
+      "ip": "::1",
+      "details": "So'rov: CAN-2026-00052, Geokod: UZ-TAS-CHI-2026-000540",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498623833-889",
+      "timestamp": "2026-10-20T12:17:03.833Z",
+      "category": "AUTHORIZATION",
+      "action": "Respublika DKP MM yakuniy tasdiq berdi",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "RESPUBLIKA_DKP_MM",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00104",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498621176-895",
+      "timestamp": "2026-10-20T12:17:01.176Z",
+      "category": "AUTHORIZATION",
+      "action": "Respublika DKP MM yakuniy tasdiq berdi",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "RESPUBLIKA_DKP_MM",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00103",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498620509-729",
+      "timestamp": "2026-10-20T12:17:00.509Z",
+      "category": "AUTHORIZATION",
+      "action": "Hudud DKP MM bog'lovchi chiziqni kelishdi",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "HUDUD_DKP_MM",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00103",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498618438-644",
+      "timestamp": "2026-10-20T12:16:58.438Z",
+      "category": "DATA_OPERATION",
+      "action": "Manzil berish bo'yicha invoys to'landi",
+      "userName": "\"ORIENT PROPERTIES\" MChJ",
+      "ip": "::1",
+      "details": "Invoys: INV-2026-0089, Summa: 68000 so'm",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498617710-758",
+      "timestamp": "2026-10-20T12:16:57.710Z",
+      "category": "AUTHORIZATION",
+      "action": "Filial rahbari manzil arizasini tasdiqladi",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "FILIAL_RAHBARI_DKP",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00102, Bosqich: PAYMENT_PENDING",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498611960-230",
+      "timestamp": "2026-10-20T12:16:51.960Z",
+      "category": "AUTHORIZATION",
+      "action": "Filial rahbari manzil arizasini tasdiqladi",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "FILIAL_RAHBARI_DKP",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00101, Bosqich: APPROVED",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498609109-800",
+      "timestamp": "2026-10-20T12:16:49.109Z",
+      "category": "USER_ACTION",
+      "action": "Filial DKP MM arizaga kirish nuqtalari va manzil biriktirdi",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "FILIAL_DKP_MM",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00101, Geokod: UZ-TAS-CHI-2026-000021",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498216875-913",
+      "timestamp": "2026-10-20T12:10:16.875Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-respublika",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "RESPUBLIKA_DKP_MM",
+      "ip": "::1",
+      "details": "Yangi faol rol: RESPUBLIKA_DKP_MM",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498214380-958",
+      "timestamp": "2026-10-20T12:10:14.380Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-citizen",
+      "userName": "Yo'ldoshev Alisher Farhodovich",
+      "userRole": "CITIZEN",
+      "ip": "::1",
+      "details": "Yangi faol rol: CITIZEN",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498209820-793",
+      "timestamp": "2026-10-20T12:10:09.820Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-inspector",
+      "userName": "Karimov Jasur Nematovich",
+      "userRole": "INSPECTOR",
+      "ip": "::1",
+      "details": "Yangi faol rol: INSPECTOR",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498206972-899",
+      "timestamp": "2026-10-20T12:10:06.972Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-admin",
+      "userName": "Abdullayev Otabek Shavkatovich",
+      "userRole": "ADMIN",
+      "ip": "::1",
+      "details": "Yangi faol rol: ADMIN",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498204260-301",
+      "timestamp": "2026-10-20T12:10:04.260Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-filial-mm",
+      "userName": "Bo'riyev Komiljon Ergashovich",
+      "userRole": "FILIAL_DKP_MM",
+      "ip": "::1",
+      "details": "Yangi faol rol: FILIAL_DKP_MM",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498200955-412",
+      "timestamp": "2026-10-20T12:10:00.955Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-filial-head",
+      "userName": "Omonov Sarvar Davronovich",
+      "userRole": "FILIAL_RAHBARI_DKP",
+      "ip": "::1",
+      "details": "Yangi faol rol: FILIAL_RAHBARI_DKP",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498197284-734",
+      "timestamp": "2026-10-20T12:09:57.284Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-hudud",
+      "userName": "Turg'unov Xurshidbek Anvarovich",
+      "userRole": "HUDUD_DKP_MM",
+      "ip": "::1",
+      "details": "Yangi faol rol: HUDUD_DKP_MM",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498161180-711",
+      "timestamp": "2026-10-20T12:09:21.180Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-respublika",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "RESPUBLIKA_DKP_MM",
+      "ip": "::1",
+      "details": "Yangi faol rol: RESPUBLIKA_DKP_MM",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498012803-609",
+      "timestamp": "2026-10-20T12:06:52.803Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-filial-head",
+      "userName": "Omonov Sarvar Davronovich",
+      "userRole": "FILIAL_RAHBARI_DKP",
+      "ip": "::1",
+      "details": "Yangi faol rol: FILIAL_RAHBARI_DKP",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498010803-376",
+      "timestamp": "2026-10-20T12:06:50.803Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-hudud",
+      "userName": "Turg'unov Xurshidbek Anvarovich",
+      "userRole": "HUDUD_DKP_MM",
+      "ip": "::1",
+      "details": "Yangi faol rol: HUDUD_DKP_MM",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792498009052-218",
+      "timestamp": "2026-10-20T12:06:49.052Z",
+      "category": "AUTHORIZATION",
+      "action": "Foydalanuvchi roli almashtirildi (Demo)",
+      "userId": "user-respublika",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userRole": "RESPUBLIKA_DKP_MM",
+      "ip": "::1",
+      "details": "Yangi faol rol: RESPUBLIKA_DKP_MM",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792497730822-564",
+      "timestamp": "2026-10-20T12:02:10.822Z",
+      "category": "SYSTEM",
+      "action": "UZKAD C-03 xabarnomasi qabul qilindi va avtomatik qayta ishlandi",
+      "userName": "UZKAD Integration Gateway",
+      "ip": "::1",
+      "details": "Kadastr: 10:04:02:01:01:9999, Obyekt: UZ-TAS-CHI-2026-000020",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792497709035-754",
+      "timestamp": "2026-10-20T12:01:49.035Z",
+      "category": "DATA_OPERATION",
+      "action": "Manzil bo'yicha rasmiy ma'lumotnoma / ko'chirma shakllantirildi",
+      "userName": "Foydalanuvchi",
+      "ip": "::1",
+      "details": "Ma'lumotnoma № MK-2026-685184, Geokod: UZ-TAS-CHI-2026-000020",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792497709028-872",
+      "timestamp": "2026-10-20T12:01:49.028Z",
+      "category": "AUTHORIZATION",
+      "action": "Respublika DKP MM yakuniy tasdiq berdi",
+      "userName": "Respublika DKP MM",
+      "userRole": "RESPUBLIKA_DKP_MM",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00105",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792497709019-483",
+      "timestamp": "2026-10-20T12:01:49.019Z",
+      "category": "AUTHORIZATION",
+      "action": "Hudud DKP MM bog'lovchi chiziqni kelishdi",
+      "userName": "Hudud DKP MM",
+      "userRole": "HUDUD_DKP_MM",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00105",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792497709011-406",
+      "timestamp": "2026-10-20T12:01:49.011Z",
+      "category": "AUTHORIZATION",
+      "action": "Filial rahbari manzil arizasini tasdiqladi",
+      "userName": "Filial rahbari DKP",
+      "userRole": "FILIAL_RAHBARI_DKP",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00105, Bosqich: REGION_AGREEMENT",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792497709003-269",
+      "timestamp": "2026-10-20T12:01:49.003Z",
+      "category": "USER_ACTION",
+      "action": "Filial DKP MM arizaga kirish nuqtalari va manzil biriktirdi",
+      "userName": "Filial DKP MM",
+      "userRole": "FILIAL_DKP_MM",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00105, Geokod: UZ-TAS-CHI-2026-000020",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1792497708962-278",
+      "timestamp": "2026-10-20T12:01:48.962Z",
+      "category": "DATA_OPERATION",
+      "action": "Yangi manzil arizasi qabul qilindi (C-01)",
+      "userName": "Alimov Botirjon",
+      "ip": "::1",
+      "details": "Ariza: APP-2026-00105, Manba: MYGOV, Kadastr: 10:04:02:01:01:9999",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-001",
+      "timestamp": "2026-02-19T08:00:15Z",
+      "category": "SYSTEM",
+      "action": "Tizim ishga tushirildi",
+      "userName": "Tizim yadrosi",
+      "ip": "127.0.0.1",
+      "details": "Barcha modullar va ma'lumotlar bazasi tayyor holatda",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-002",
+      "timestamp": "2026-02-19T08:15:32Z",
+      "category": "AUTH",
+      "action": "OneID orqali muvaffaqiyatli kirish",
+      "userId": "user-admin",
+      "userName": "Abdullayev Otabek Shavkatovich",
+      "userRole": "ADMIN",
+      "ip": "192.168.1.104",
+      "details": "JSHSHIR: 31201880010023, Sessiya ID: sess-84912",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-003",
+      "category": "USER_ACTION",
+      "action": "Manzil qidiruvi amalga oshirildi",
+      "userId": "user-filial-mm",
+      "userName": "Bo'riyev Komiljon",
+      "userRole": "FILIAL_DKP_MM",
+      "timestamp": "2026-02-19T09:20:00Z",
+      "ip": "192.168.1.155",
+      "details": "Filtr: Cho'ponota ko'chasi, tuman: Chilonzor",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-004",
+      "category": "DATA_OPERATION",
+      "action": "Yangi manzil arizasi qabul qilindi (C-01)",
+      "userId": "user-filial-mm",
+      "userName": "Bo'riyev Komiljon",
+      "userRole": "FILIAL_DKP_MM",
+      "timestamp": "2026-02-19T10:05:40Z",
+      "ip": "192.168.1.155",
+      "details": "Ariza raqami: APP-2026-00101, Kadastr: 10:04:03:02:01:0048",
+      "status": "SUCCESS"
+    }
+  ],
+  "settings": {
+    "systemTitleUz": "Ko'chmas mulk obyektlari manzillari reestrining ma'lumotlar bazasi AT",
+    "systemTitleRu": "ИС База данных реестра адресов объектов недвижимости",
+    "maxConnectingLineMeters": 50,
+    "defaultInvoiceAmountUzs": 68000,
+    "autoGeocodePrefix": "UZ",
+    "maintenanceMode": false,
+    "requireOneIdForStaff": true,
+    "sessionTimeoutMinutes": 120,
+    "uzkadAutoRemovalEnabled": true,
+    "geonamesAutoValidation": true
+  },
+  "tickets": [
+    {
+      "id": "tkt-1792583629281",
+      "ticketNumber": "TKT-2026-0014",
+      "userId": "user-respublika",
+      "userName": "Mirmaqsudov Mirkomil Bahodirovich",
+      "userEmail": "respublika.mm@kadastr.uz",
+      "category": "BOSHQA",
+      "subject": "fvgfvgdfgvd",
+      "message": "dvgfg",
+      "priority": "YUQORI",
+      "status": "OPEN",
+      "replies": [],
+      "createdAt": "2026-10-21T11:53:49.281Z",
+      "updatedAt": "2026-10-21T11:53:49.281Z"
+    },
+    {
+      "id": "tkt-001",
+      "ticketNumber": "TKT-2026-0012",
+      "userId": "user-filial-mm",
+      "userName": "Bo'riyev Komiljon",
+      "userEmail": "filial.mm@kadastr.uz",
+      "category": "GIS_XARITA",
+      "subject": "Bog'lovchi chiziq uzunligini xaritada aniq o'lchash",
+      "message": "Ba'zi tor ko'chalarda bog'lovchi yo'lak 48 metr chiqqanda chegara to'g'ri o'tirganini qanday tekshirish mumkin?",
+      "priority": "ORTA",
+      "status": "IN_PROGRESS",
+      "replies": [
+        {
+          "id": "rep-001",
+          "senderName": "Abdullayev Otabek (Admin)",
+          "isStaff": true,
+          "message": "Xarita panelidagi 'O'lchash' vositasini tanlab, koordinatalarni tekshirishingiz mumkin. TTZ bo'yicha 50 metrgacha ruxsat etiladi.",
+          "timestamp": "2026-02-19T11:00:00Z"
+        }
+      ],
+      "createdAt": "2026-02-19T10:30:00Z",
+      "updatedAt": "2026-02-19T11:00:00Z"
+    }
+  ]
+}
