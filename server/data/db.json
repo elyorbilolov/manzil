@@ -100,591 +100,829 @@
   ],
   "addresses": [
     {
-      "id": "addr-1792498623828",
-      "geocode": "UZ-TAS-CHI-2026-000540",
-      "cadastreNumber": "10:04:06:01:01:0077",
+      "id": "addr-01",
+      "cadastreNumber": "19:11:41:01:02:0238",
+      "geocode": "UZ-SUR-TER-2026-000238",
+      "region": "Surxondaryo viloyati",
+      "district": "Termiz tumani",
+      "mahalla": "Sh.Rashidov MFY",
+      "streetType": "kocha",
+      "streetName": "Sharof Rashidov ko'chasi",
+      "usageType": "Noturar",
+      "objectType": "noturar",
+      "houseNumber": "14-a",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "190100",
+      "fullAddressUz": "Surxondaryo viloyati, Termiz tumani, Sh.Rashidov MFY, Sharof Rashidov ko'chasi, 14-a",
+      "fullAddressUzCyrillic": "Сурхондарё вилояти, Термиз тумани, Ш.Рашидов МФЙ, Шароф Рашидов кўчаси, 14-а",
+      "fullAddressRu": "Сурхандарьинская область, Термезский район, МСГ Ш.Рашидов, ул. Шарофа Рашидова, 14-а",
+      "lat": 37.2285,
+      "lng": 67.2752,
+      "entrancePoints": [
+        {
+          "id": "ep-01",
+          "type": "main",
+          "lat": 37.2285,
+          "lng": 67.2752,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-10T08:00:00Z",
+      "updatedAt": "2026-02-10T08:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-02",
+      "cadastreNumber": "22:11:42:02:02:0305",
+      "geocode": "UZ-XOR-URG-2026-000305",
+      "region": "Xorazm viloyati",
+      "district": "Urganch sh",
+      "mahalla": "Buston MFY",
+      "streetType": "kocha",
+      "streetName": "T.Malik ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "41",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "220100",
+      "fullAddressUz": "Xorazm viloyati, Urganch sh, Buston MFY, T.Malik ko'chasi, 41",
+      "fullAddressUzCyrillic": "Хоразм вилояти, Урганч ш, Бўстон МФЙ, Т.Малик кўчаси, 41",
+      "fullAddressRu": "Хорезмская область, г. Ургенч, МСG Бустон, ул. Т.Малика, 41",
+      "lat": 41.5562,
+      "lng": 60.6315,
+      "entrancePoints": [
+        {
+          "id": "ep-02",
+          "type": "main",
+          "lat": 41.5562,
+          "lng": 60.6315,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-11T09:15:00Z",
+      "updatedAt": "2026-02-11T09:15:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-03",
+      "cadastreNumber": "23:15:40:01:01:1182",
+      "geocode": "UZ-QOR-QON-2026-001182",
+      "region": "Qoraqalpog'iston Respublikasi",
+      "district": "Qo'ng'irot tumani",
+      "mahalla": "Berdaq MFY",
+      "streetType": "kocha",
+      "streetName": "Yangi daryo",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "21",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "230700",
+      "fullAddressUz": "Qoraqalpog'iston Respublikasi, Qo'ng'irot tumani, Berdaq MFY, Yangi daryo, 21",
+      "fullAddressUzCyrillic": "Қорақалпоғистон Республикаси, Қўнғирот тумани, Бердақ МФЙ, Янги дарё, 21",
+      "fullAddressRu": "Республика Каракалпакстан, Кунградский район, МСГ Бердах, Янги дарьё, 21",
+      "lat": 43.0425,
+      "lng": 58.8472,
+      "entrancePoints": [
+        {
+          "id": "ep-03",
+          "type": "main",
+          "lat": 43.0425,
+          "lng": 58.8472,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-12T10:30:00Z",
+      "updatedAt": "2026-02-12T10:30:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-04",
+      "cadastreNumber": "14:16:43:03:02:0353",
+      "geocode": "UZ-SAM-SAM-2026-000353",
+      "region": "Samarqand viloyati",
+      "district": "Samarqand sh",
+      "mahalla": "Mehriobod MFY",
+      "streetType": "kocha",
+      "streetName": "Najmiddin Kubro ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "43",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "140100",
+      "fullAddressUz": "Samarqand viloyati, Samarqand sh, Mehriobod MFY, Najmiddin Kubro ko'chasi, 43",
+      "fullAddressUzCyrillic": "Самарқанд вилояти, Самарқанд ш, Меҳриобод МФЙ, Нажмиддин Кубро кўчаси, 43",
+      "fullAddressRu": "Самаркандская область, г. Самарканд, МСГ Мехриобод, ул. Нажмиддина Кубро, 43",
+      "lat": 39.6542,
+      "lng": 66.9597,
+      "entrancePoints": [
+        {
+          "id": "ep-04",
+          "type": "main",
+          "lat": 39.6542,
+          "lng": 66.9597,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-14T11:00:00Z",
+      "updatedAt": "2026-02-14T11:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-05",
+      "cadastreNumber": "15:19:40:02:01:0392",
+      "geocode": "UZ-FAR-MAR-2026-000392",
+      "region": "Farg'ona viloyati",
+      "district": "Marg'ilon sh",
+      "mahalla": "Yorqin MFY",
+      "streetType": "kocha",
+      "streetName": "Imom Zahriddin ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "158",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "151100",
+      "fullAddressUz": "Farg'ona viloyati, Marg'ilon sh, Yorqin MFY, Imom Zahriddin ko'chasi, 158",
+      "fullAddressUzCyrillic": "Фарғона вилояти, Марғилон ш, Ёрқин МФЙ, Имом Заҳриддин кўчаси, 158",
+      "fullAddressRu": "Ферганская область, г. Маргилан, МСГ Ёркын, ул. Имама Захриддина, 158",
+      "lat": 40.4721,
+      "lng": 71.7234,
+      "entrancePoints": [
+        {
+          "id": "ep-05",
+          "type": "main",
+          "lat": 40.4721,
+          "lng": 71.7234,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-15T12:00:00Z",
+      "updatedAt": "2026-02-15T12:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-06",
+      "cadastreNumber": "23:04:40:02:03:0173",
+      "geocode": "UZ-QOR-KEG-2026-000173",
+      "region": "Qoraqalpog'iston Respublikasi",
+      "district": "Kegeyli tumani",
+      "mahalla": "Gujim terek MFY",
+      "streetType": "kocha",
+      "streetName": "Xalqabad",
+      "usageType": "Noturar",
+      "objectType": "noturar",
+      "houseNumber": "41",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "230500",
+      "fullAddressUz": "Qoraqalpog'iston Respublikasi, Kegeyli tumani, Gujim terek MFY, Xalqabad, 41",
+      "fullAddressUzCyrillic": "Қорақалпоғистон Республикаси, Кегейли тумани, Гужим терек МФЙ, Халқабад, 41",
+      "fullAddressRu": "Республика Каракалпакстан, Кегейлийский район, МСГ Гужим терек, Халкабад, 41",
+      "lat": 42.7812,
+      "lng": 59.6085,
+      "entrancePoints": [
+        {
+          "id": "ep-06",
+          "type": "main",
+          "lat": 42.7812,
+          "lng": 59.6085,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-16T13:40:00Z",
+      "updatedAt": "2026-02-16T13:40:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-07",
+      "cadastreNumber": "15:20:40:02:01:0450",
+      "geocode": "UZ-FAR-FAR-2026-000450",
+      "region": "Farg'ona viloyati",
+      "district": "Farg'ona sh",
+      "mahalla": "Sovurbuloq MFY",
+      "streetType": "kocha",
+      "streetName": "Sovur buloq ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "352",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "150100",
+      "fullAddressUz": "Farg'ona viloyati, Farg'ona sh, Sovurbuloq MFY, Sovur buloq ko'chasi, 352",
+      "fullAddressUzCyrillic": "Фарғона вилояти, Фарғона ш, Совурбулоқ МФЙ, Совур булоқ кўчаси, 352",
+      "fullAddressRu": "Ферганская область, г. Фергана, МСГ Савурбулак, ул. Савур булак, 352",
+      "lat": 40.3864,
+      "lng": 71.7864,
+      "entrancePoints": [
+        {
+          "id": "ep-07",
+          "type": "main",
+          "lat": 40.3864,
+          "lng": 71.7864,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-17T14:10:00Z",
+      "updatedAt": "2026-02-17T14:10:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-08",
+      "cadastreNumber": "18:10:40:01:03:0791",
+      "geocode": "UZ-QAS-SHA-2026-000791",
+      "region": "Qashqadaryo viloyati",
+      "district": "Shahrisabz tumani",
+      "mahalla": "Xontepa MFY",
+      "streetType": "kocha",
+      "streetName": "Navro'z ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "505",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "181300",
+      "fullAddressUz": "Qashqadaryo viloyati, Shahrisabz tumani, Xontepa MFY, Navro'z ko'chasi, 505",
+      "fullAddressUzCyrillic": "Қашқадарё вилояти, Шаҳрисабз тумани, Хонтепа МФЙ, Наврўз кўчаси, 505",
+      "fullAddressRu": "Кашкадарьинская область, Шахрисабзский район, МСГ Хантепа, ул. Навруз, 505",
+      "lat": 39.0521,
+      "lng": 66.8312,
+      "entrancePoints": [
+        {
+          "id": "ep-08",
+          "type": "main",
+          "lat": 39.0521,
+          "lng": 66.8312,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-18T15:20:00Z",
+      "updatedAt": "2026-02-18T15:20:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-09",
+      "cadastreNumber": "19:13:41:02:01:0705",
+      "geocode": "UZ-SUR-SHE-2026-000705",
+      "region": "Surxondaryo viloyati",
+      "district": "Sherobod tumani",
+      "mahalla": "Mexrobod MFY",
+      "streetType": "kocha",
+      "streetName": "Xorazm",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "28",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "191500",
+      "fullAddressUz": "Surxondaryo viloyati, Sherobod tumani, Mexrobod MFY, Xorazm, 28",
+      "fullAddressUzCyrillic": "Сурхондарё вилояти, Шеробод тумани, Меҳробод МФЙ, Хоразм, 28",
+      "fullAddressRu": "Сурхандарьинская область, Шерабадский район, МСГ Мехрабад, Хорезм, 28",
+      "lat": 37.6712,
+      "lng": 66.9214,
+      "entrancePoints": [
+        {
+          "id": "ep-09",
+          "type": "main",
+          "lat": 37.6712,
+          "lng": 66.9214,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-19T16:00:00Z",
+      "updatedAt": "2026-02-19T16:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-10",
+      "cadastreNumber": "16:01:41:01:01:0051",
+      "geocode": "UZ-NAM-KOS-2026-000051",
+      "region": "Namangan viloyati",
+      "district": "Kosonsoy tumani",
+      "mahalla": "Shirinbuloq MFY",
+      "streetType": "kocha",
+      "streetName": "Birlik ko'chasi",
+      "usageType": "Noturar",
+      "objectType": "noturar",
+      "houseNumber": "11-a",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "160500",
+      "fullAddressUz": "Namangan viloyati, Kosonsoy tumani, Shirinbuloq MFY, Birlik ko'chasi, 11-a",
+      "fullAddressUzCyrillic": "Наманган вилояти, Косонсой тумани, Ширинбулоқ МФЙ, Бирлик кўчаси, 11-а",
+      "fullAddressRu": "Наманганская область, Касансайский район, МСГ Ширинбулак, ул. Бирлик, 11-а",
+      "lat": 41.2561,
+      "lng": 71.5478,
+      "entrancePoints": [
+        {
+          "id": "ep-10",
+          "type": "main",
+          "lat": 41.2561,
+          "lng": 71.5478,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-20T16:45:00Z",
+      "updatedAt": "2026-02-20T16:45:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-11",
+      "cadastreNumber": "10:04:01:02:01:0123",
+      "geocode": "UZ-TAS-CHI-2026-000123",
       "region": "Toshkent shahri",
       "district": "Chilonzor tumani",
-      "postalCode": "100115",
-      "planningStructureType": "ishlab_chiqarish_maydoni",
-      "planningStructureName": "Chilonzor sanoat zonasi",
+      "mahalla": "Muqimiy MFY",
+      "streetType": "kocha",
+      "streetName": "Muqimiy ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "12",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "100096",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Muqimiy MFY, Muqimiy ko'chasi, 12",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Муқимий МФЙ, Муқимий кўчаси, 12",
+      "fullAddressRu": "г. Ташкент, Чиланзарский район, МСГ Мукими, ул. Мукими, 12",
+      "lat": 41.2858,
+      "lng": 69.2035,
+      "entrancePoints": [
+        {
+          "id": "ep-11",
+          "type": "main",
+          "lat": 41.2858,
+          "lng": 69.2035,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-21T09:00:00Z",
+      "updatedAt": "2026-02-21T09:00:00Z",
+      "createdBy": "Bo'riyev Komiljon Ergashovich"
+    },
+    {
+      "id": "addr-12",
+      "cadastreNumber": "10:01:05:01:02:0045",
+      "geocode": "UZ-TAS-YUN-2026-000045",
+      "region": "Toshkent shahri",
+      "district": "Yunusobod tumani",
+      "mahalla": "Bodomzor MFY",
+      "streetType": "shoh_kocha",
+      "streetName": "Amir Temur shoh ko'chasi",
+      "usageType": "Ko'p kvartirali bino",
+      "objectType": "turar_joy",
+      "houseNumber": "108",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "100084",
+      "fullAddressUz": "Toshkent shahri, Yunusobod tumani, Bodomzor MFY, Amir Temur shoh ko'chasi, 108",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Юнусобод тумани, Бодомзор МФЙ, Амир Темур шоҳ кўчаси, 108",
+      "fullAddressRu": "г. Ташкент, Юнусабадский район, МСГ Бадамзар, просп. Амира Темура, 108",
+      "lat": 41.3325,
+      "lng": 69.2814,
+      "entrancePoints": [
+        {
+          "id": "ep-12",
+          "type": "main",
+          "lat": 41.3325,
+          "lng": 69.2814,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-22T10:00:00Z",
+      "updatedAt": "2026-02-22T10:00:00Z",
+      "createdBy": "Bo'riyev Komiljon Ergashovich"
+    },
+    {
+      "id": "addr-13",
+      "cadastreNumber": "11:08:12:01:03:0089",
+      "geocode": "UZ-TVP-CHI-2026-000089",
+      "region": "Toshkent viloyati",
+      "district": "Chirchiq sh",
+      "mahalla": "Iftixor MFY",
+      "streetType": "kocha",
+      "streetName": "Zakiriy ko'chasi",
+      "usageType": "Noturar",
+      "objectType": "noturar",
+      "houseNumber": "34-b",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "111700",
+      "fullAddressUz": "Toshkent viloyati, Chirchiq sh, Iftixor MFY, Zakiriy ko'chasi, 34-b",
+      "fullAddressUzCyrillic": "Тошкент вилояти, Чирчиқ ш, Ифтихор МФЙ, Закирий кўчаси, 34-б",
+      "fullAddressRu": "Ташкентская область, г. Чирчик, МСГ Ифтихор, ул. Закирия, 34-б",
+      "lat": 41.4688,
+      "lng": 69.5822,
+      "entrancePoints": [
+        {
+          "id": "ep-13",
+          "type": "main",
+          "lat": 41.4688,
+          "lng": 69.5822,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-23T11:30:00Z",
+      "updatedAt": "2026-02-23T11:30:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-14",
+      "cadastreNumber": "12:02:15:02:01:0112",
+      "geocode": "UZ-AND-AND-2026-000112",
+      "region": "Andijon viloyati",
+      "district": "Andijon sh",
+      "mahalla": "Barkamol MFY",
+      "streetType": "shoh_kocha",
+      "streetName": "Bobur shoh ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "56",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "170100",
+      "fullAddressUz": "Andijon viloyati, Andijon sh, Barkamol MFY, Bobur shoh ko'chasi, 56",
+      "fullAddressUzCyrillic": "Андижон вилояти, Андижон ш, Баркамол МФЙ, Бобур шоҳ кўчаси, 56",
+      "fullAddressRu": "Андижанская область, г. Андижан, МСГ Баркамол, просп. Бабура, 56",
+      "lat": 40.7821,
+      "lng": 72.3442,
+      "entrancePoints": [
+        {
+          "id": "ep-14",
+          "type": "main",
+          "lat": 40.7821,
+          "lng": 72.3442,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-24T12:00:00Z",
+      "updatedAt": "2026-02-24T12:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-15",
+      "cadastreNumber": "13:05:22:01:04:0230",
+      "geocode": "UZ-BUX-BUX-2026-000230",
+      "region": "Buxoro viloyati",
+      "district": "Buxoro sh",
+      "mahalla": "Somoniylar MFY",
+      "streetType": "kocha",
+      "streetName": "Naqshbandiy ko'chasi",
+      "usageType": "Noturar",
+      "objectType": "noturar",
+      "houseNumber": "17",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "200100",
+      "fullAddressUz": "Buxoro viloyati, Buxoro sh, Somoniylar MFY, Naqshbandiy ko'chasi, 17",
+      "fullAddressUzCyrillic": "Бухоро вилояти, Бухоро ш, Сомонийлар МФЙ, Нақшбандий кўчаси, 17",
+      "fullAddressRu": "Бухарская область, г. Бухара, МСГ Сомонилар, ул. Накшбанди, 17",
+      "lat": 39.7747,
+      "lng": 64.4286,
+      "entrancePoints": [
+        {
+          "id": "ep-15",
+          "type": "main",
+          "lat": 39.7747,
+          "lng": 64.4286,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-25T13:00:00Z",
+      "updatedAt": "2026-02-25T13:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-16",
+      "cadastreNumber": "17:03:10:01:02:0195",
+      "geocode": "UZ-NAV-NAV-2026-000195",
+      "region": "Navoiy viloyati",
+      "district": "Navoiy sh",
+      "mahalla": "G'alaba MFY",
+      "streetType": "kocha",
+      "streetName": "Alisher Navoiy ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "88",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "210100",
+      "fullAddressUz": "Navoiy viloyati, Navoiy sh, G'alaba MFY, Alisher Navoiy ko'chasi, 88",
+      "fullAddressUzCyrillic": "Навоий вилояти, Навоий ш, Ғалаба МФЙ, Алишер Навоий кўчаси, 88",
+      "fullAddressRu": "Навоийская область, г. Навои, МСГ Галаба, ул. Алишера Навои, 88",
+      "lat": 40.0844,
+      "lng": 65.3792,
+      "entrancePoints": [
+        {
+          "id": "ep-16",
+          "type": "main",
+          "lat": 40.0844,
+          "lng": 65.3792,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-26T14:15:00Z",
+      "updatedAt": "2026-02-26T14:15:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-17",
+      "cadastreNumber": "20:07:08:02:01:0142",
+      "geocode": "UZ-SIR-GUL-2026-000142",
+      "region": "Sirdaryo viloyati",
+      "district": "Guliston sh",
+      "mahalla": "Taraqqiyot MFY",
+      "streetType": "kocha",
+      "streetName": "Sayxun ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "22",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "120100",
+      "fullAddressUz": "Sirdaryo viloyati, Guliston sh, Taraqqiyot MFY, Sayxun ko'chasi, 22",
+      "fullAddressUzCyrillic": "Сирдарё вилояти, Гулистон ш, Тараққиёт МФЙ, Сайхун кўчаси, 22",
+      "fullAddressRu": "Сырдарьинская область, г. Гулистан, МСГ Тараккиёт, ул. Сайхун, 22",
+      "lat": 40.4897,
+      "lng": 68.7844,
+      "entrancePoints": [
+        {
+          "id": "ep-17",
+          "type": "main",
+          "lat": 40.4897,
+          "lng": 68.7844,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-27T15:00:00Z",
+      "updatedAt": "2026-02-27T15:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-18",
+      "cadastreNumber": "21:04:16:01:03:0310",
+      "geocode": "UZ-JIZ-JIZ-2026-000310",
+      "region": "Jizzax viloyati",
+      "district": "Jizzax sh",
+      "mahalla": "Sayiljoyi MFY",
+      "streetType": "shoh_kocha",
+      "streetName": "Sharof Rashidov shoh ko'chasi",
+      "usageType": "Noturar",
+      "objectType": "noturar",
+      "houseNumber": "7-a",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "130100",
+      "fullAddressUz": "Jizzax viloyati, Jizzax sh, Sayiljoyi MFY, Sharof Rashidov shoh ko'chasi, 7-a",
+      "fullAddressUzCyrillic": "Жиззах вилояти, Жиззах ш, Сайилжойи МФЙ, Шароф Рашидов шоҳ кўчаси, 7-а",
+      "fullAddressRu": "Джизакская область, г. Джизак, МСГ Сайилжойи, просп. Шарафа Рашидова, 7-а",
+      "lat": 40.1158,
+      "lng": 67.8422,
+      "entrancePoints": [
+        {
+          "id": "ep-18",
+          "type": "main",
+          "lat": 40.1158,
+          "lng": 67.8422,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-02-28T16:00:00Z",
+      "updatedAt": "2026-02-28T16:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-19",
+      "cadastreNumber": "10:04:06:01:01:0077",
+      "geocode": "UZ-TAS-CHI-2026-000077",
+      "region": "Toshkent shahri",
+      "district": "Chilonzor tumani",
+      "mahalla": "Katta Chilonzor MFY",
       "streetType": "magistral",
       "streetName": "Katta Halqa Yo'li",
-      "houseNumber": "15/2",
-      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Chilonzor sanoat zonasi, Katta Halqa Yo'li, 15/2-uy",
-      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чилонзор саноат зонаси, Катта Ҳалқа Йўли, 15/2-уй",
-      "fullAddressRu": "г. Ташкент, Chilonzor район, Chilonzor sanoat zonasi, ул. Katta Halqa Yo'li, д. 15/2",
+      "usageType": "Noturar",
       "objectType": "noturar",
+      "houseNumber": "15/2",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "100115",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Katta Chilonzor MFY, Katta Halqa Yo'li, 15/2",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Катта Чилонзор МФЙ, Катта Ҳалқа Йўли, 15/2",
+      "fullAddressRu": "г. Ташкент, Чиланзарский район, МСГ Катта Чиланзар, Ташкентская кольцевая автодорога, 15/2",
       "lat": 41.2645,
       "lng": 69.1952,
       "entrancePoints": [
         {
-          "id": "ep-app-4",
+          "id": "ep-19",
           "type": "main",
-          "lat": 41.26455,
-          "lng": 69.19522,
-          "name": "Yuk tashish darvozasi",
+          "lat": 41.2645,
+          "lng": 69.1952,
           "isOnBoundary": true
         }
       ],
-      "connectingLine": {
-        "id": "conn-app-4",
-        "points": [
-          [
-            41.26455,
-            69.19522
-          ],
-          [
-            41.26495,
-            69.19522
-          ]
-        ],
-        "lengthMeters": 44.2,
-        "isValid": true,
-        "targetStreetName": "Katta Halqa Yo'li yordamchi yo'lagi"
-      },
-      "status": "cancelled",
-      "legalGrounds": "Ariza APP-2026-00104 asosida",
-      "createdAt": "2026-10-20T12:17:03.828Z",
-      "updatedAt": "2026-10-20T12:17:30.236Z",
-      "createdBy": "Mirmaqsudov Mirkomil Bahodirovich",
-      "history": [
-        {
-          "timestamp": "2026-10-20T12:17:03.828Z",
-          "action": "C-01 reglamenti asosida ro'yxatga olindi",
-          "changedBy": "Mirmaqsudov Mirkomil Bahodirovich",
-          "role": "SYSTEM",
-          "details": "Ariza raqami: APP-2026-00104"
-        },
-        {
-          "timestamp": "2026-10-20T12:17:28.181Z",
-          "action": "UZKAD C-03 orqali avtomatik bekor qilindi",
-          "changedBy": "UZKAD Integratsion Shlyuz",
-          "role": "SYSTEM",
-          "details": "Hujjat: Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26"
-        },
-        {
-          "timestamp": "2026-10-20T12:17:29.556Z",
-          "action": "UZKAD C-03 orqali avtomatik bekor qilindi",
-          "changedBy": "UZKAD Integratsion Shlyuz",
-          "role": "SYSTEM",
-          "details": "Hujjat: Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26"
-        },
-        {
-          "timestamp": "2026-10-20T12:17:30.236Z",
-          "action": "UZKAD C-03 orqali avtomatik bekor qilindi",
-          "changedBy": "UZKAD Integratsion Shlyuz",
-          "role": "SYSTEM",
-          "details": "Hujjat: Toshkent shahar hokimiyati buzish dalolatnomasi № 412/26"
-        }
-      ],
-      "statusReason": "UZKAD avtomatik o'chirish: DEMOLISHED"
+      "createdAt": "2026-03-01T09:00:00Z",
+      "updatedAt": "2026-03-01T09:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
     },
     {
-      "id": "addr-1792498621172",
-      "geocode": "UZ-TAS-CHI-2026-000511",
+      "id": "addr-20",
       "cadastreNumber": "10:04:05:01:03:0033",
+      "geocode": "UZ-TAS-CHI-2026-000033",
       "region": "Toshkent shahri",
       "district": "Chilonzor tumani",
-      "postalCode": "100097",
-      "planningStructureType": "hudud",
-      "planningStructureName": "Do'mbrobod mahallasi",
+      "mahalla": "Do'mbrobod MFY",
       "streetType": "berk_kocha",
       "streetName": "Do'mbrobod 3-tor ko'cha",
-      "houseNumber": "12",
-      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Do'mbrobod mahallasi, Do'mbrobod 3-tor ko'cha, 12-uy",
-      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Дўмбробод маҳалласи, Дўмбробод 3-тор кўча, 12-уй",
-      "fullAddressRu": "г. Ташкент, Chilonzor район, Do'mbrobod mahallasi, ул. Do'mbrobod 3-tor ko'cha, д. 12",
+      "usageType": "Yakka tartibdagi turar joylar",
       "objectType": "turar_joy",
+      "houseNumber": "12",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "100097",
+      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Do'mbrobod MFY, Do'mbrobod 3-tor ko'cha, 12",
+      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Дўмбробод МФЙ, Дўмбробод 3-тор кўча, 12",
+      "fullAddressRu": "г. Ташкент, Чиланзарский район, МСГ Домбрабад, 3-й тупик Домбрабад, 12",
       "lat": 41.2715,
       "lng": 69.2085,
       "entrancePoints": [
         {
-          "id": "ep-app-3",
+          "id": "ep-20",
           "type": "main",
-          "lat": 41.27155,
-          "lng": 69.20852,
-          "name": "Hovli darvozasi",
+          "lat": 41.2715,
+          "lng": 69.2085,
           "isOnBoundary": true
         }
       ],
-      "connectingLine": {
-        "id": "conn-app-3",
-        "points": [
-          [
-            41.27155,
-            69.20852
-          ],
-          [
-            41.27185,
-            69.20852
-          ]
-        ],
-        "lengthMeters": 33.5,
-        "isValid": true,
-        "targetStreetName": "Do'mbrobod berk ko'chasi"
-      },
-      "status": "active",
-      "legalGrounds": "Ariza APP-2026-00103 asosida",
-      "createdAt": "2026-10-20T12:17:01.172Z",
-      "updatedAt": "2026-10-20T12:17:01.172Z",
-      "createdBy": "Mirmaqsudov Mirkomil Bahodirovich",
-      "history": [
-        {
-          "timestamp": "2026-10-20T12:17:01.172Z",
-          "action": "C-01 reglamenti asosida ro'yxatga olindi",
-          "changedBy": "Mirmaqsudov Mirkomil Bahodirovich",
-          "role": "SYSTEM",
-          "details": "Ariza raqami: APP-2026-00103"
-        }
-      ]
+      "createdAt": "2026-03-02T10:30:00Z",
+      "updatedAt": "2026-03-02T10:30:00Z",
+      "createdBy": "Bo'riyev Komiljon Ergashovich"
     },
     {
-      "id": "addr-1792498618436",
-      "geocode": "UZ-TAS-CHI-2026-000492",
-      "cadastreNumber": "10:04:01:04:02:0110",
-      "region": "Toshkent shahri",
-      "district": "Chilonzor tumani",
-      "postalCode": "100115",
-      "planningStructureType": "mavze",
-      "planningStructureName": "Chilonzor 3-mavze",
-      "streetType": "kocha",
-      "streetName": "Qatortol ko'chasi",
-      "houseNumber": "25-uy",
-      "unitNumber": "Ofis 401",
-      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Chilonzor 3-mavze, Qatortol ko'chasi, 25-uy-uy, Ofis 401-xonadon/obyekt",
-      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чилонзор 3-мавзе, Қатортол кўчаси, 25-уй-уй, Офис 401-хонадон/обйект",
-      "fullAddressRu": "г. Ташкент, Chilonzor район, Chilonzor 3-mavze, ул. Qatortol , д. 25-uy, пом./кв. Ofis 401",
-      "objectType": "noturar",
-      "lat": 41.2821,
-      "lng": 69.2234,
-      "entrancePoints": [
-        {
-          "id": "ep-app-2",
-          "type": "main",
-          "lat": 41.28215,
-          "lng": 69.22345,
-          "name": "Biznes markaz bosh kirishi",
-          "isOnBoundary": true
-        }
-      ],
-      "status": "active",
-      "legalGrounds": "Ariza APP-2026-00102 asosida",
-      "createdAt": "2026-10-20T12:16:58.436Z",
-      "updatedAt": "2026-10-20T12:16:58.436Z",
-      "createdBy": "Moliya / Bank to'lov shlyuzi",
-      "history": [
-        {
-          "timestamp": "2026-10-20T12:16:58.436Z",
-          "action": "C-01 reglamenti asosida ro'yxatga olindi",
-          "changedBy": "Moliya / Bank to'lov shlyuzi",
-          "role": "SYSTEM",
-          "details": "Ariza raqami: APP-2026-00102"
-        }
-      ]
-    },
-    {
-      "id": "addr-1792498611956",
-      "geocode": "UZ-TAS-CHI-2026-000021",
-      "cadastreNumber": "10:04:03:02:01:0048",
-      "region": "Toshkent shahri",
-      "district": "Chilonzor tumani",
-      "postalCode": "100097",
-      "planningStructureType": "mavze",
-      "planningStructureName": "Chilonzor 9-mavze",
-      "streetType": "kocha",
-      "streetName": "Lutfiy ko'chasi",
-      "houseNumber": "18-B",
-      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Chilonzor 9-mavze, Lutfiy ko'chasi, 18-B-uy",
-      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чилонзор 9-мавзе, Лутфий кўчаси, 18-Б-уй",
-      "fullAddressRu": "г. Ташкент, Chilonzor район, Chilonzor 9-mavze, ул. Lutfiy , д. 18-B",
-      "objectType": "turar_joy",
-      "lat": 41.2789,
-      "lng": 69.2145,
-      "boundaryPolygon": [
-        [
-          41.2792,
-          69.2141
-        ],
-        [
-          41.2793,
-          69.215
-        ],
-        [
-          41.2786,
-          69.2151
-        ],
-        [
-          41.2785,
-          69.2142
-        ]
-      ],
-      "entrancePoints": [
-        {
-          "id": "ep-app-1",
-          "type": "main",
-          "lat": 41.27925,
-          "lng": 69.21455,
-          "name": "Asosiy kirish eshigi",
-          "isOnBoundary": true
-        }
-      ],
-      "status": "active",
-      "legalGrounds": "Ariza APP-2026-00101 asosida",
-      "createdAt": "2026-10-20T12:16:51.956Z",
-      "updatedAt": "2026-10-20T12:16:51.956Z",
-      "createdBy": "Mirmaqsudov Mirkomil Bahodirovich",
-      "history": [
-        {
-          "timestamp": "2026-10-20T12:16:51.956Z",
-          "action": "C-01 reglamenti asosida ro'yxatga olindi",
-          "changedBy": "Mirmaqsudov Mirkomil Bahodirovich",
-          "role": "SYSTEM",
-          "details": "Ariza raqami: APP-2026-00101"
-        }
-      ]
-    },
-    {
-      "id": "addr-1792497709025",
-      "geocode": "UZ-TAS-CHI-2026-000020",
-      "cadastreNumber": "10:04:02:01:01:9999",
-      "region": "Toshkent shahri",
-      "district": "Chilonzor tumani",
-      "postalCode": "100097",
-      "streetType": "kocha",
-      "streetName": "Cho'ponota ko'chasi",
-      "houseNumber": "100",
-      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Cho'ponota ko'chasi, 100-uy",
-      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чўпонота кўчаси, 100-уй",
-      "fullAddressRu": "г. Ташкент, Chilonzor район, ул. Cho'ponota , д. 100",
-      "objectType": "turar_joy",
-      "lat": 41.2858,
-      "lng": 69.2036,
-      "boundaryPolygon": [
-        [
-          41.286,
-          69.203
-        ],
-        [
-          41.2861,
-          69.204
-        ],
-        [
-          41.2853,
-          69.2041
-        ],
-        [
-          41.2852,
-          69.2031
-        ]
-      ],
-      "entrancePoints": [
-        {
-          "id": "ep-1",
-          "name": "Asosiy kirish",
-          "isOnBoundary": true,
-          "type": "main",
-          "lat": 41.2858,
-          "lng": 69.2036
-        }
-      ],
-      "connectingLine": {
-        "isValid": true,
-        "lengthMeters": 22,
-        "id": "conn-1",
-        "points": [
-          "41.2858 69.2036",
-          "41.286 69.2036"
-        ]
-      },
-      "status": "cancelled",
-      "legalGrounds": "Ariza APP-2026-00105 asosida",
-      "createdAt": "2026-10-20T12:01:49.025Z",
-      "updatedAt": "2026-10-20T12:02:10.820Z",
-      "createdBy": "Mirmaqsudov Mirkomil (Respublika DKP MM)",
-      "history": [
-        {
-          "timestamp": "2026-10-20T12:01:49.025Z",
-          "action": "C-01 reglamenti asosida ro'yxatga olindi",
-          "changedBy": "Mirmaqsudov Mirkomil (Respublika DKP MM)",
-          "role": "SYSTEM",
-          "details": "Ariza raqami: APP-2026-00105"
-        },
-        {
-          "timestamp": "2026-10-20T12:02:10.820Z",
-          "action": "UZKAD C-03 orqali avtomatik bekor qilindi",
-          "changedBy": "UZKAD Integratsion Shlyuz",
-          "role": "SYSTEM",
-          "details": "Hujjat: Toshkent shahar buzish dalolatnomasi ? 55"
-        }
-      ],
-      "statusReason": "UZKAD avtomatik o'chirish: DEMOLISHED"
-    },
-    {
-      "id": "addr-001",
-      "geocode": "UZ-TAS-CHI-2026-000001",
-      "cadastreNumber": "10:04:02:01:01:0024",
-      "region": "Toshkent shahri",
-      "district": "Chilonzor tumani",
-      "postalCode": "100097",
-      "planningStructureType": "mavze",
-      "planningStructureName": "Chilonzor-M mavzesi",
-      "streetType": "kocha",
-      "streetName": "Cho'ponota ko'chasi",
-      "houseNumber": "6-В",
-      "objectType": "noturar",
-      "fullAddressUz": "Toshkent shahri, Chilonzor tumani, Chilonzor-M mavzesi, Cho'ponota ko'chasi, 6-В uy",
-      "fullAddressUzCyrillic": "Тошкент шаҳри, Чилонзор тумани, Чилонзор-М мавзеси, Чўпонота кўчаси, 6-В уй",
-      "fullAddressRu": "г. Ташкент, Чиланзарский район, массив Чиланзар-М, ул. Чупонота, дом 6-В",
-      "lat": 41.28582,
-      "lng": 69.20364,
-      "boundaryPolygon": [
-        [
-          41.2861,
-          69.2032
-        ],
-        [
-          41.2862,
-          69.2041
-        ],
-        [
-          41.2855,
-          69.2042
-        ],
-        [
-          41.2854,
-          69.2033
-        ]
-      ],
-      "entrancePoints": [
-        {
-          "id": "ep-001",
-          "type": "main",
-          "lat": 41.28615,
-          "lng": 69.20365,
-          "name": "Bosh kirish darvozasi",
-          "isOnBoundary": true
-        },
-        {
-          "id": "ep-002",
-          "type": "secondary",
-          "lat": 41.28545,
-          "lng": 69.20375,
-          "name": "Xizmat ko'rsatish eshigi",
-          "isOnBoundary": true
-        }
-      ],
-      "connectingLine": {
-        "id": "conn-001",
-        "points": [
-          [
-            41.28615,
-            69.20365
-          ],
-          [
-            41.28635,
-            69.20365
-          ]
-        ],
-        "lengthMeters": 22.4,
-        "isValid": true,
-        "targetStreetName": "Cho'ponota ko'chasi"
-      },
-      "status": "active",
-      "legalGrounds": "Vazirlar Mahkamasining 2018 yil 14 dekabrdagi 1010-son qarori",
-      "createdAt": "2026-01-15T10:00:00Z",
-      "updatedAt": "2026-01-15T10:00:00Z",
-      "createdBy": "Omonov Sarvar Davronovich (Filial rahbari DKP)",
-      "history": [
-        {
-          "timestamp": "2026-01-15T10:00:00Z",
-          "action": "Manzil ro'yxatga olindi va geokod biriktirildi",
-          "changedBy": "Omonov Sarvar Davronovich",
-          "role": "FILIAL_RAHBARI_DKP",
-          "details": "Dastlabki ro'yxatga olish, geokod UZ-TAS-CHI-2026-000001 biriktirildi"
-        }
-      ]
-    },
-    {
-      "id": "addr-002",
-      "geocode": "UZ-TAS-YAK-2026-000108",
-      "cadastreNumber": "10:08:01:03:04:0052",
-      "region": "Toshkent shahri",
-      "district": "Yakkasaroy tumani",
-      "postalCode": "100100",
-      "planningStructureType": "hudud",
-      "planningStructureName": "Rakat mahallasi",
-      "streetType": "shoh_kocha",
-      "streetName": "Shota Rustaveli shoh ko'chasi",
-      "houseNumber": "42",
-      "blockNumber": "A",
-      "unitNumber": "14",
-      "objectType": "turar_joy",
-      "fullAddressUz": "Toshkent shahri, Yakkasaroy tumani, Rakat mahallasi, Shota Rustaveli shoh ko'chasi, 42-A uy, 14-xonadon",
-      "fullAddressUzCyrillic": "Тошкент шаҳри, Яккасарой тумани, Ракат маҳалласи, Шота Руставели шоҳ кўчаси, 42-А уй, 14-хонадон",
-      "fullAddressRu": "г. Ташкент, Яккасарайский район, махалля Ракат, проспект Шота Руставели, д. 42-А, кв. 14",
-      "lat": 41.2915,
-      "lng": 69.2458,
-      "boundaryPolygon": [
-        [
-          41.2918,
-          69.2454
-        ],
-        [
-          41.2919,
-          69.2462
-        ],
-        [
-          41.2912,
-          69.2463
-        ],
-        [
-          41.2911,
-          69.2455
-        ]
-      ],
-      "entrancePoints": [
-        {
-          "id": "ep-003",
-          "type": "main",
-          "lat": 41.29185,
-          "lng": 69.2458,
-          "name": "Asosiy kirish eshigi (1-podyezd)",
-          "isOnBoundary": true
-        }
-      ],
-      "connectingLine": {
-        "id": "conn-002",
-        "points": [
-          [
-            41.29185,
-            69.2458
-          ],
-          [
-            41.29202,
-            69.2458
-          ]
-        ],
-        "lengthMeters": 18.9,
-        "isValid": true,
-        "targetStreetName": "Shota Rustaveli shoh ko'chasi"
-      },
-      "status": "active",
-      "legalGrounds": "Toshkent shahar hokimi qarori № 412",
-      "createdAt": "2026-01-20T12:30:00Z",
-      "updatedAt": "2026-01-20T12:30:00Z",
-      "createdBy": "Filial rahbari DKP"
-    },
-    {
-      "id": "addr-003",
-      "geocode": "UZ-SAM-SAM-2026-000201",
-      "cadastreNumber": "14:01:04:01:02:0089",
+      "id": "addr-21",
+      "cadastreNumber": "14:16:40:01:02:0521",
+      "geocode": "UZ-SAM-URG-2026-000521",
       "region": "Samarqand viloyati",
-      "district": "Samarqand shahri",
-      "postalCode": "140100",
-      "planningStructureType": "hudud",
-      "planningStructureName": "Registon mahallasi",
+      "district": "Urgut tumani",
+      "mahalla": "Vag'ashti MFY",
       "streetType": "kocha",
-      "streetName": "Registon ko'chasi",
-      "houseNumber": "1",
-      "objectType": "noturar",
-      "fullAddressUz": "Samarqand viloyati, Samarqand shahri, Registon mahallasi, Registon ko'chasi, 1-uy",
-      "fullAddressUzCyrillic": "Самарқанд вилояти, Самарқанд шаҳри, Регистон маҳалласи, Регистон кўчаси, 1-уй",
-      "fullAddressRu": "Самаркандская область, г. Самарканд, махалля Регистан, ул. Регистан, д. 1",
-      "lat": 39.6547,
-      "lng": 66.9758,
-      "boundaryPolygon": [
-        [
-          39.6552,
-          66.9752
-        ],
-        [
-          39.6553,
-          66.9765
-        ],
-        [
-          39.6542,
-          66.9766
-        ],
-        [
-          39.6541,
-          66.9753
-        ]
-      ],
-      "entrancePoints": [
-        {
-          "id": "ep-004",
-          "type": "main",
-          "lat": 39.65415,
-          "lng": 66.9758,
-          "name": "Asosiy portal kirishi",
-          "isOnBoundary": true
-        }
-      ],
-      "status": "active",
-      "legalGrounds": "Madaniy meros agentligi va Kadastr palatasi ro'yxati",
-      "createdAt": "2026-01-25T14:00:00Z",
-      "updatedAt": "2026-01-25T14:00:00Z",
-      "createdBy": "Samarqand shahar filiali"
-    },
-    {
-      "id": "addr-004",
-      "geocode": "UZ-BUX-BUX-2026-000305",
-      "cadastreNumber": "20:01:02:05:01:0014",
-      "region": "Buxoro viloyati",
-      "district": "Buxoro shahri",
-      "postalCode": "200100",
-      "planningStructureType": "hudud",
-      "planningStructureName": "Labi Hovuz mahallasi",
-      "streetType": "kocha",
-      "streetName": "Naqshband ko'chasi",
-      "houseNumber": "45",
+      "streetName": "Markaziy ko'cha",
+      "usageType": "Yakka tartibdagi turar joylar",
       "objectType": "turar_joy",
-      "fullAddressUz": "Buxoro viloyati, Buxoro shahri, Labi Hovuz mahallasi, Naqshband ko'chasi, 45-uy",
-      "fullAddressUzCyrillic": "Бухоро вилояти, Бухоро шаҳри, Лаби Ҳовуз маҳалласи, Нақшбанд кўчаси, 45-уй",
-      "fullAddressRu": "Бухарская область, г. Бухара, махалля Ляби Хауз, ул. Накшбанд, д. 45",
-      "lat": 39.7745,
-      "lng": 64.4215,
+      "houseNumber": "91",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "141600",
+      "fullAddressUz": "Samarqand viloyati, Urgut tumani, Vag'ashti MFY, Markaziy ko'cha, 91",
+      "fullAddressUzCyrillic": "Самарқанд вилояти, Ургут тумани, Вағашти МФЙ, Марказий кўча, 91",
+      "fullAddressRu": "Самаркандская область, Ургутский район, МСГ Вагашти, ул. Центральная, 91",
+      "lat": 39.4082,
+      "lng": 67.2451,
       "entrancePoints": [
         {
-          "id": "ep-005",
+          "id": "ep-21",
           "type": "main",
-          "lat": 39.77455,
-          "lng": 64.42152,
-          "name": "Hovli darvozasi",
+          "lat": 39.4082,
+          "lng": 67.2451,
           "isOnBoundary": true
         }
       ],
-      "status": "active",
-      "createdAt": "2026-02-01T11:15:00Z",
-      "updatedAt": "2026-02-01T11:15:00Z",
-      "createdBy": "Buxoro shahar filiali"
+      "createdAt": "2026-03-03T11:45:00Z",
+      "updatedAt": "2026-03-03T11:45:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
     },
     {
-      "id": "addr-005",
-      "geocode": "UZ-TAS-YUN-2025-009840",
-      "cadastreNumber": "10:02:04:01:01:0012",
-      "region": "Toshkent shahri",
-      "district": "Yunusobod tumani",
-      "postalCode": "100084",
-      "planningStructureType": "mavze",
-      "planningStructureName": "Yunusobod 4-mavze",
+      "id": "addr-22",
+      "cadastreNumber": "15:20:38:01:01:0125",
+      "geocode": "UZ-FAR-QOQ-2026-000125",
+      "region": "Farg'ona viloyati",
+      "district": "Qo'qon sh",
+      "mahalla": "Xo'qandi Latif MFY",
       "streetType": "kocha",
-      "streetName": "Amir Temur shoh ko'chasi",
-      "houseNumber": "88",
+      "streetName": "Turkiston ko'chasi",
+      "usageType": "Noturar",
       "objectType": "noturar",
-      "fullAddressUz": "Toshkent shahri, Yunusobod tumani, Yunusobod 4-mavze, Amir Temur shoh ko'chasi, 88-uy",
-      "fullAddressUzCyrillic": "Тошкент шаҳри, Юнусобод тумани, Юнусобод 4-мавзе, Амир Темур шоҳ кўчаси, 88-уй",
-      "fullAddressRu": "г. Ташкент, Юнусабадский район, массив Юнусабад 4, ул. Амира Темура, д. 88",
-      "lat": 41.3412,
-      "lng": 69.2854,
-      "entrancePoints": [],
-      "status": "cancelled",
-      "statusReason": "Obyekt buzilgan (UZKAD xabarnomasi bo'yicha)",
-      "legalGrounds": "Toshkent shahar hokimiyati buzish qarori № 891",
-      "createdAt": "2025-11-10T09:00:00Z",
-      "updatedAt": "2026-02-14T16:00:00Z",
-      "createdBy": "Yunusobod filiali"
+      "houseNumber": "63",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "150700",
+      "fullAddressUz": "Farg'ona viloyati, Qo'qon sh, Xo'qandi Latif MFY, Turkiston ko'chasi, 63",
+      "fullAddressUzCyrillic": "Фарғона вилояти, Қўқон ш, Хўқанди Латиф МФЙ, Туркистон кўчаси, 63",
+      "fullAddressRu": "Ферганская область, г. Коканд, МСГ Хуканди Латиф, ул. Туркестанская, 63",
+      "lat": 40.5286,
+      "lng": 70.9425,
+      "entrancePoints": [
+        {
+          "id": "ep-22",
+          "type": "main",
+          "lat": 40.5286,
+          "lng": 70.9425,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-03-04T13:00:00Z",
+      "updatedAt": "2026-03-04T13:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-23",
+      "cadastreNumber": "18:10:35:02:01:0418",
+      "geocode": "UZ-QAS-QAR-2026-000418",
+      "region": "Qashqadaryo viloyati",
+      "district": "Qarshi sh",
+      "mahalla": "Otchopar MFY",
+      "streetType": "shoh_kocha",
+      "streetName": "Mustaqillik shoh ko'chasi",
+      "usageType": "Yakka tartibdagi turar joylar",
+      "objectType": "turar_joy",
+      "houseNumber": "114",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "180100",
+      "fullAddressUz": "Qashqadaryo viloyati, Qarshi sh, Otchopar MFY, Mustaqillik shoh ko'chasi, 114",
+      "fullAddressUzCyrillic": "Қашқадарё вилояти, Қарши ш, Отчопар МФЙ, Мустақиллик шоҳ кўчаси, 114",
+      "fullAddressRu": "Кашкадарьинская область, г. Карши, МСГ Отчопар, просп. Мустакиллик, 114",
+      "lat": 38.8612,
+      "lng": 65.7892,
+      "entrancePoints": [
+        {
+          "id": "ep-23",
+          "type": "main",
+          "lat": 38.8612,
+          "lng": 65.7892,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-03-05T14:20:00Z",
+      "updatedAt": "2026-03-05T14:20:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-24",
+      "cadastreNumber": "22:11:39:01:01:0277",
+      "geocode": "UZ-XOR-XIV-2026-000277",
+      "region": "Xorazm viloyati",
+      "district": "Xiva sh",
+      "mahalla": "Ichan Qal'a MFY",
+      "streetType": "kocha",
+      "streetName": "Pahlavon Mahmud ko'chasi",
+      "usageType": "Noturar",
+      "objectType": "noturar",
+      "houseNumber": "5",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "220900",
+      "fullAddressUz": "Xorazm viloyati, Xiva sh, Ichan Qal'a MFY, Pahlavon Mahmud ko'chasi, 5",
+      "fullAddressUzCyrillic": "Хоразм вилояти, Хива ш, Ичан Қалъа МФЙ, Паҳлавон Маҳмуд кўчаси, 5",
+      "fullAddressRu": "Хорезмская область, г. Хива, МСГ Ичан Кала, ул. Пахлавана Махмуда, 5",
+      "lat": 41.3783,
+      "lng": 60.3594,
+      "entrancePoints": [
+        {
+          "id": "ep-24",
+          "type": "main",
+          "lat": 41.3783,
+          "lng": 60.3594,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-03-06T15:10:00Z",
+      "updatedAt": "2026-03-06T15:10:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
+    },
+    {
+      "id": "addr-25",
+      "cadastreNumber": "23:15:38:02:01:0390",
+      "geocode": "UZ-QOR-NUK-2026-000390",
+      "region": "Qoraqalpog'iston Respublikasi",
+      "district": "Nukus sh",
+      "mahalla": "Garezsizlik MFY",
+      "streetType": "kocha",
+      "streetName": "Dosnazarov ko'chasi",
+      "usageType": "Ko'p kvartirali bino",
+      "objectType": "turar_joy",
+      "houseNumber": "49",
+      "source": "UZKAD",
+      "status": "active",
+      "postalCode": "230100",
+      "fullAddressUz": "Qoraqalpog'iston Respublikasi, Nukus sh, Garezsizlik MFY, Dosnazarov ko'chasi, 49",
+      "fullAddressUzCyrillic": "Қорақалпоғистон Республикаси, Нукус ш, Гарезсизлик МФЙ, Досназаров кўчаси, 49",
+      "fullAddressRu": "Республика Каракалпакстан, г. Нукус, МСГ Гарезсизлик, ул. Досназарова, 49",
+      "lat": 42.4612,
+      "lng": 59.6166,
+      "entrancePoints": [
+        {
+          "id": "ep-25",
+          "type": "main",
+          "lat": 42.4612,
+          "lng": 59.6166,
+          "isOnBoundary": true
+        }
+      ],
+      "createdAt": "2026-03-07T16:00:00Z",
+      "updatedAt": "2026-03-07T16:00:00Z",
+      "createdBy": "UZKAD Avtomatlashtirilgan Integratsiya"
     }
   ],
   "applications": [

@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Address } from '../types';
 import { api } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import {
-  Search,
-  Filter,
+  Eye,
   FileSpreadsheet,
-  Building,
-  Award,
-  MapPin,
-  Trash2,
-  ExternalLink,
+  Download,
+  ChevronLeft,
   ChevronRight,
-  ShieldCheck,
+  Filter,
   CheckCircle,
   XCircle,
-  Download
+  Award,
+  MapPin,
+  RefreshCw,
 } from 'lucide-react';
 
 interface RegistryPageProps {
@@ -24,6 +22,23 @@ interface RegistryPageProps {
   onOpenCancellation: (addr: Address) => void;
   onNavigateToMap: (addr: Address) => void;
 }
+
+const UZBEKISTAN_REGIONS = [
+  'Surxondaryo viloyati',
+  'Xorazm viloyati',
+  'Qoraqalpog\'iston Respublikasi',
+  'Samarqand viloyati',
+  'Farg\'ona viloyati',
+  'Qashqadaryo viloyati',
+  'Namangan viloyati',
+  'Toshkent shahri',
+  'Toshkent viloyati',
+  'Andijon viloyati',
+  'Buxoro viloyati',
+  'Jizzax viloyati',
+  'Navoiy viloyati',
+  'Sirdaryo viloyati',
+];
 
 export const RegistryPage: React.FC<RegistryPageProps> = ({
   onSelectAddress,
@@ -34,20 +49,27 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
   const { role } = useAuth();
   const [addresses, setAddresses] = useState<Address[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
+
+  // Filters matching screenshot
+  const [cadastreFilter, setCadastreFilter] = useState('');
   const [regionFilter, setRegionFilter] = useState('all');
-  const [statusFilter, setStatusFilter] = useState('all');
-  const [objectTypeFilter, setObjectTypeFilter] = useState('all');
+  const [districtFilter, setDistrictFilter] = useState('all');
+  const [mahallaFilter, setMahallaFilter] = useState('all');
+  const [streetFilter, setStreetFilter] = useState('all');
+  const [houseNumberFilter, setHouseNumberFilter] = useState('');
+  const [usageTypeFilter, setUsageTypeFilter] = useState('all');
+
+  // Pagination (default: 20 as requested)
+  const [pageSize, setPageSize] = useState<number>(20);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  // Download section
+  const [exportRegion, setExportRegion] = useState<string>('all');
 
   const loadData = async () => {
     setLoading(true);
     try {
-      const res = await api.getAddresses({
-        q: searchQuery,
-        region: regionFilter,
-        status: statusFilter,
-        objectType: objectTypeFilter,
-      });
+      const res = await api.getAddresses();
       if (res.success) {
         setAddresses(res.addresses);
       }
@@ -60,221 +82,507 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
 
   useEffect(() => {
     loadData();
-  }, [regionFilter, statusFilter, objectTypeFilter]);
+  }, []);
 
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    loadData();
-  };
+  // Filtered lists for dropdowns
+  const availableDistricts = useMemo(() => {
+    const list = addresses
+      .filter(a => regionFilter === 'all' || a.region === regionFilter)
+      .map(a => a.district)
+      .filter(Boolean);
+    return Array.from(new Set(list));
+  }, [addresses, regionFilter]);
 
-  const exportCsv = () => {
-    if (addresses.length === 0) return;
-    const headers = ['Geokod', 'Kadastr_raqami', 'Viloyat', 'Tuman', 'Kucha', 'Uy', 'Turi', 'Holati'];
-    const rows = addresses.map(a => [
-      `"${a.geocode}"`,
-      `"${a.cadastreNumber}"`,
-      `"${a.region}"`,
-      `"${a.district}"`,
-      `"${a.streetName}"`,
-      `"${a.houseNumber}"`,
-      `"${a.objectType}"`,
-      `"${a.status}"`,
+  const availableMahallas = useMemo(() => {
+    const list = addresses
+      .filter(a => (regionFilter === 'all' || a.region === regionFilter) && (districtFilter === 'all' || a.district === districtFilter))
+      .map(a => (a as any).mahalla)
+      .filter(Boolean);
+    return Array.from(new Set(list));
+  }, [addresses, regionFilter, districtFilter]);
+
+  const availableStreets = useMemo(() => {
+    const list = addresses
+      .filter(a => (regionFilter === 'all' || a.region === regionFilter) && (districtFilter === 'all' || a.district === districtFilter))
+      .map(a => a.streetName)
+      .filter(Boolean);
+    return Array.from(new Set(list));
+  }, [addresses, regionFilter, districtFilter]);
+
+  const availableUsageTypes = useMemo(() => {
+    const list = addresses.map(a => (a as any).usageType || a.objectType).filter(Boolean);
+    return Array.from(new Set(list));
+  }, [addresses]);
+
+  // Filter addresses
+  const filteredAddresses = useMemo(() => {
+    return addresses.filter(item => {
+      if (cadastreFilter.trim()) {
+        const term = cadastreFilter.trim().toLowerCase();
+        if (!item.cadastreNumber.toLowerCase().includes(term)) {
+          return false;
+        }
+      }
+      if (regionFilter !== 'all' && item.region !== regionFilter) {
+        return false;
+      }
+      if (districtFilter !== 'all' && item.district !== districtFilter) {
+        return false;
+      }
+      if (mahallaFilter !== 'all') {
+        const itemMahalla = (item as any).mahalla || '';
+        if (!itemMahalla.toLowerCase().includes(mahallaFilter.toLowerCase())) {
+          return false;
+        }
+      }
+      if (streetFilter !== 'all') {
+        if (!item.streetName.toLowerCase().includes(streetFilter.toLowerCase())) {
+          return false;
+        }
+      }
+      if (houseNumberFilter.trim()) {
+        const term = houseNumberFilter.trim().toLowerCase();
+        if (!item.houseNumber.toLowerCase().includes(term)) {
+          return false;
+        }
+      }
+      if (usageTypeFilter !== 'all') {
+        const itemUsage = (item as any).usageType || item.objectType;
+        if (itemUsage !== usageTypeFilter) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }, [
+    addresses,
+    cadastreFilter,
+    regionFilter,
+    districtFilter,
+    mahallaFilter,
+    streetFilter,
+    houseNumberFilter,
+    usageTypeFilter,
+  ]);
+
+  // Pagination calculation
+  const totalItems = filteredAddresses.length;
+  const totalPages = Math.ceil(totalItems / pageSize) || 1;
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = Math.min(startIndex + pageSize, totalItems);
+  const currentItems = filteredAddresses.slice(startIndex, endIndex);
+
+  // Reset page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [
+    cadastreFilter,
+    regionFilter,
+    districtFilter,
+    mahallaFilter,
+    streetFilter,
+    houseNumberFilter,
+    usageTypeFilter,
+    pageSize,
+  ]);
+
+  // Export to Excel / CSV
+  const handleDownloadExcel = () => {
+    const listToExport = exportRegion === 'all'
+      ? addresses
+      : addresses.filter(a => a.region === exportRegion);
+
+    if (listToExport.length === 0) {
+      alert("Tanlangan hudud bo'yicha manzillar topilmadi.");
+      return;
+    }
+
+    const headers = [
+      'Kadastr raqami',
+      'Hudud',
+      'Tuman',
+      'Mahalla',
+      'Ko\'cha',
+      'Uy raqami',
+      'Foydalanish turi',
+      'Manba',
+      'Unikal Geokod',
+      'To\'liq manzil (Lotin)',
+      'Holati',
+    ];
+
+    const rows = listToExport.map(a => [
+      `"${a.cadastreNumber || ''}"`,
+      `"${a.region || ''}"`,
+      `"${a.district || ''}"`,
+      `"${(a as any).mahalla || ''}"`,
+      `"${a.streetName || ''}"`,
+      `"${a.houseNumber || ''}"`,
+      `"${(a as any).usageType || a.objectType || ''}"`,
+      `"${(a as any).source || 'UZKAD'}"`,
+      `"${a.geocode || ''}"`,
+      `"${a.fullAddressUz || ''}"`,
+      `"${a.status === 'active' ? 'Faol' : 'Bekor qilingan'}"`,
     ]);
-    const csvContent = 'data:text/csv;charset=utf-8,\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
-    const encodedUri = encodeURI(csvContent);
+
+    // CSV format with UTF-8 BOM so Excel opens it in Uzbek Cyrillic/Latin without encoding corruption
+    const csvContent =
+      '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\r\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `manzillar_reestri_${Date.now()}.csv`);
+    const safeRegion = exportRegion === 'all' ? 'barcha_hududlar' : exportRegion.replace(/[^a-zA-Z0-9]/g, '_');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `Manzillar_Reestri_${safeRegion}_${new Date().toISOString().split('T')[0]}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
-  return (
-    <div className="space-y-6">
-      {/* Header and Actions */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-            Ko'chmas mulk obyektlari manzillari reestri
-          </h1>
-          <p className="text-xs text-slate-500 mt-1">
-            Davlat kadastrlari palatasi tasdiqlangan manzillar ma'lumotlar bazasi (TTZ 4.2.7)
-          </p>
-        </div>
+  const exportCount = useMemo(() => {
+    return exportRegion === 'all'
+      ? addresses.length
+      : addresses.filter(a => a.region === exportRegion).length;
+  }, [addresses, exportRegion]);
 
-        <div className="flex items-center space-x-3">
+  return (
+    <div className="space-y-4">
+      {/* Container Card */}
+      <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs p-6 space-y-5">
+        
+        {/* Title */}
+        <div className="flex items-center justify-between">
+          <h1 className="text-xl font-bold text-slate-800 tracking-wide uppercase">
+            REYESTR
+          </h1>
           <button
-            onClick={exportCsv}
-            className="px-3.5 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 flex items-center space-x-2 shadow-sm transition-all"
+            onClick={loadData}
+            title="Yangilash"
+            className="p-1.5 rounded-lg border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors"
           >
-            <FileSpreadsheet className="w-4 h-4 text-emerald-600" />
-            <span>CSV / Excel Eksport</span>
+            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-blue-600' : ''}`} />
           </button>
         </div>
-      </div>
 
-      {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
-        <form onSubmit={handleSearchSubmit} className="flex gap-2">
-          <div className="relative flex-1">
-            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+        {/* Filter Bar (1:1 with user screenshot + Uy raqami) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-2.5">
+          {/* 1. Kadastr raqami */}
+          <div>
             <input
               type="text"
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Geokod, manzil, ko'cha nomi yoki kadastr raqami bo'yicha qidirish..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-slate-50/50"
+              value={cadastreFilter}
+              onChange={e => setCadastreFilter(e.target.value)}
+              placeholder="Kadastr raqami"
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
             />
           </div>
-          <button
-            type="submit"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-5 py-2.5 rounded-xl shadow-sm transition-all"
-          >
-            Qidirish
-          </button>
-        </form>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 border-t border-slate-100 text-xs">
+          {/* 2. Hudud */}
           <div>
-            <label className="block text-[11px] font-semibold text-slate-500 mb-1">Hudud bo'yicha:</label>
             <select
               value={regionFilter}
-              onChange={e => setRegionFilter(e.target.value)}
-              className="w-full py-1.5 px-3 rounded-lg border border-slate-200 text-xs bg-white focus:outline-none"
+              onChange={e => {
+                setRegionFilter(e.target.value);
+                setDistrictFilter('all');
+                setMahallaFilter('all');
+                setStreetFilter('all');
+              }}
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-700 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
             >
-              <option value="all">Barcha hududlar</option>
-              <option value="Toshkent shahri">Toshkent shahri</option>
-              <option value="Samarqand viloyati">Samarqand viloyati</option>
-              <option value="Buxoro viloyati">Buxoro viloyati</option>
-              <option value="Farg'ona viloyati">Farg'ona viloyati</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-[11px] font-semibold text-slate-500 mb-1">Holati bo'yicha:</label>
-            <select
-              value={statusFilter}
-              onChange={e => setStatusFilter(e.target.value)}
-              className="w-full py-1.5 px-3 rounded-lg border border-slate-200 text-xs bg-white focus:outline-none"
-            >
-              <option value="all">Barchasi (Faol & Bekor qilingan)</option>
-              <option value="active">Faqat Faol manzillar</option>
-              <option value="cancelled">Bekor qilingan / Arxiv</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-[11px] font-semibold text-slate-500 mb-1">Obyekt turi:</label>
-            <select
-              value={objectTypeFilter}
-              onChange={e => setObjectTypeFilter(e.target.value)}
-              className="w-full py-1.5 px-3 rounded-lg border border-slate-200 text-xs bg-white focus:outline-none"
-            >
-              <option value="all">Barcha turlar</option>
-              <option value="turar_joy">Turar joy</option>
-              <option value="noturar">Noturar bino/inshoot</option>
-              <option value="yer_uchastkasi">Yer uchastkasi</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      {/* Addresses Table */}
-      <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
-          <span className="text-xs font-bold text-slate-700 uppercase">
-            Topilgan manzillar soni: <span className="text-emerald-700">{addresses.length} ta</span>
-          </span>
-          <span className="text-[11px] text-slate-500">
-            O'zbekiston Respublikasi yagona bazasi
-          </span>
-        </div>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 text-slate-600 font-bold border-b border-slate-200 uppercase text-[10px] tracking-wider">
-              <tr>
-                <th className="py-3 px-4">Unikal Geokod</th>
-                <th className="py-3 px-4">Kadastr raqami</th>
-                <th className="py-3 px-4">Rasmiy to'liq manzil</th>
-                <th className="py-3 px-4">Hudud / Tuman</th>
-                <th className="py-3 px-4">Obyekt turi</th>
-                <th className="py-3 px-4">Holati</th>
-                <th className="py-3 px-4 text-right">Amallar</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-100">
-              {addresses.map(addr => (
-                <tr key={addr.id} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="py-3.5 px-4 font-mono font-bold text-emerald-800">
-                    {addr.geocode}
-                  </td>
-                  <td className="py-3.5 px-4 font-mono text-slate-700">
-                    {addr.cadastreNumber}
-                  </td>
-                  <td className="py-3.5 px-4 font-medium text-slate-900 max-w-xs">
-                    <div>{addr.fullAddressUz}</div>
-                    <div className="text-[10px] text-slate-400 italic">{addr.fullAddressUzCyrillic}</div>
-                  </td>
-                  <td className="py-3.5 px-4 text-slate-600">
-                    <div>{addr.region}</div>
-                    <div className="text-[11px] text-slate-400">{addr.district}</div>
-                  </td>
-                  <td className="py-3.5 px-4">
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-700 capitalize">
-                      {addr.objectType.replace('_', ' ')}
-                    </span>
-                  </td>
-                  <td className="py-3.5 px-4">
-                    {addr.status === 'active' ? (
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 flex items-center w-fit space-x-1">
-                        <CheckCircle className="w-3 h-3" />
-                        <span>Faol</span>
-                      </span>
-                    ) : (
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-800 flex items-center w-fit space-x-1">
-                        <XCircle className="w-3 h-3" />
-                        <span>Bekor qilingan</span>
-                      </span>
-                    )}
-                  </td>
-                  <td className="py-3.5 px-4 text-right space-x-1 whitespace-nowrap">
-                    {/* View Certificate */}
-                    <button
-                      onClick={() => onOpenCertificate(addr.id)}
-                      title="Rasmiy ma'lumotnoma (ko'chirma) olish"
-                      className="p-1.5 rounded-lg border border-slate-200 text-emerald-700 hover:bg-emerald-50 transition-colors inline-flex items-center"
-                    >
-                      <Award className="w-3.5 h-3.5" />
-                    </button>
-
-                    {/* View on Map */}
-                    <button
-                      onClick={() => onNavigateToMap(addr)}
-                      title="Xaritada ko'rish"
-                      className="p-1.5 rounded-lg border border-slate-200 text-blue-700 hover:bg-blue-50 transition-colors inline-flex items-center"
-                    >
-                      <MapPin className="w-3.5 h-3.5" />
-                    </button>
-
-                    {/* Propose Cancellation C-02 (staff only) */}
-                    {role !== 'CITIZEN' && addr.status === 'active' && (
-                      <button
-                        onClick={() => onOpenCancellation(addr)}
-                        title="Manzilni o'chirish taklifini kiritish (C-02)"
-                        className="p-1.5 rounded-lg border border-slate-200 text-rose-600 hover:bg-rose-50 transition-colors inline-flex items-center"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
-                    )}
-                  </td>
-                </tr>
+              <option value="all">Hudud</option>
+              {UZBEKISTAN_REGIONS.map(reg => (
+                <option key={reg} value={reg}>
+                  {reg}
+                </option>
               ))}
-            </tbody>
-          </table>
+            </select>
+          </div>
+
+          {/* 3. Tuman */}
+          <div>
+            <select
+              value={districtFilter}
+              onChange={e => {
+                setDistrictFilter(e.target.value);
+                setMahallaFilter('all');
+                setStreetFilter('all');
+              }}
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-700 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
+            >
+              <option value="all">Tuman</option>
+              {availableDistricts.map(dist => (
+                <option key={dist} value={dist}>
+                  {dist}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* 4. Mahalla */}
+          <div>
+            <select
+              value={mahallaFilter}
+              onChange={e => setMahallaFilter(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-700 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
+            >
+              <option value="all">Mahalla</option>
+              {availableMahallas.map(mah => (
+                <option key={mah} value={mah}>
+                  {mah}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* 5. Ko'chalar */}
+          <div>
+            <select
+              value={streetFilter}
+              onChange={e => setStreetFilter(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-700 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
+            >
+              <option value="all">Ko'chalar</option>
+              {availableStreets.map(str => (
+                <option key={str} value={str}>
+                  {str}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* 6. Uy raqami (ko'chalarni oldiga qo'shildi) */}
+          <div>
+            <input
+              type="text"
+              value={houseNumberFilter}
+              onChange={e => setHouseNumberFilter(e.target.value)}
+              placeholder="Uy raqami"
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white font-medium"
+            />
+          </div>
+
+          {/* 7. Foydalanish turi */}
+          <div>
+            <select
+              value={usageTypeFilter}
+              onChange={e => setUsageTypeFilter(e.target.value)}
+              className="w-full px-3 py-2 rounded-lg border border-slate-200 text-xs text-slate-700 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
+            >
+              <option value="all">Foydalanish turi</option>
+              {availableUsageTypes.map(ut => (
+                <option key={ut} value={ut}>
+                  {ut}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* Table View matching user screenshot */}
+        <div className="border border-slate-200 rounded-xl overflow-hidden shadow-2xs">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs border-collapse">
+              <thead className="bg-[#f8fafc] text-slate-700 font-bold border-b border-slate-200">
+                <tr>
+                  <th className="py-3 px-3.5 font-bold whitespace-nowrap">Kadastr raqami</th>
+                  <th className="py-3 px-3.5 font-bold whitespace-nowrap">Hudud</th>
+                  <th className="py-3 px-3.5 font-bold whitespace-nowrap">Tuman</th>
+                  <th className="py-3 px-3.5 font-bold whitespace-nowrap">Mahalla</th>
+                  <th className="py-3 px-3.5 font-bold whitespace-nowrap">Ko'cha</th>
+                  <th className="py-3 px-3.5 font-bold whitespace-nowrap">Foydalanish turi</th>
+                  <th className="py-3 px-3.5 font-bold whitespace-nowrap">Uy raqami</th>
+                  <th className="py-3 px-3.5 font-bold whitespace-nowrap">Manba</th>
+                  <th className="py-3 px-3.5 text-center font-bold whitespace-nowrap"></th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 bg-white">
+                {loading ? (
+                  <tr>
+                    <td colSpan={9} className="py-8 text-center text-slate-400">
+                      Ma'lumotlar yuklanmoqda...
+                    </td>
+                  </tr>
+                ) : currentItems.length === 0 ? (
+                  <tr>
+                    <td colSpan={9} className="py-8 text-center text-slate-400">
+                      Tanlangan parametrlar bo'yicha manzil ma'lumotlari topilmadi
+                    </td>
+                  </tr>
+                ) : (
+                  currentItems.map(addr => (
+                    <tr key={addr.id} className="hover:bg-blue-50/40 transition-colors">
+                      {/* Kadastr raqami */}
+                      <td className="py-3.5 px-3.5 whitespace-nowrap font-normal">
+                        <button
+                          onClick={() => onOpenCertificate(addr.id)}
+                          className="text-[#2563eb] hover:underline hover:text-blue-700 text-left cursor-pointer"
+                        >
+                          {addr.cadastreNumber}
+                        </button>
+                      </td>
+
+                      {/* Hudud */}
+                      <td className="py-3.5 px-3.5 whitespace-nowrap text-slate-700">
+                        {addr.region}
+                      </td>
+
+                      {/* Tuman */}
+                      <td className="py-3.5 px-3.5 whitespace-nowrap text-slate-700">
+                        {addr.district}
+                      </td>
+
+                      {/* Mahalla */}
+                      <td className="py-3.5 px-3.5 whitespace-nowrap text-slate-700">
+                        {(addr as any).mahalla || '-'}
+                      </td>
+
+                      {/* Ko'cha */}
+                      <td className="py-3.5 px-3.5 whitespace-nowrap text-slate-700">
+                        {addr.streetName}
+                      </td>
+
+                      {/* Foydalanish turi */}
+                      <td className="py-3.5 px-3.5 whitespace-nowrap text-slate-700">
+                        {(addr as any).usageType || (addr.objectType === 'noturar' ? 'Noturar' : 'Yakka tartibdagi turar joylar')}
+                      </td>
+
+                      {/* Uy raqami */}
+                      <td className="py-3.5 px-3.5 whitespace-nowrap text-slate-700 font-medium">
+                        {addr.houseNumber}
+                      </td>
+
+                      {/* Manba */}
+                      <td className="py-3.5 px-3.5 whitespace-nowrap text-slate-600">
+                        {(addr as any).source || 'UZKAD'}
+                      </td>
+
+                      {/* Amallar (Eye button) */}
+                      <td className="py-3.5 px-3.5 text-center whitespace-nowrap">
+                        <button
+                          onClick={() => onOpenCertificate(addr.id)}
+                          title="Manzil to'g'risidagi ma'lumotnoma va ko'rish"
+                          className="w-7 h-7 inline-flex items-center justify-center rounded-lg border border-[#3b82f6] text-[#2563eb] hover:bg-blue-50 transition-colors"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Pagination bar matching user screenshot */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
+          {/* Page size selector (Default: 20) */}
+          <div className="flex items-center space-x-2">
+            <select
+              value={pageSize}
+              onChange={e => setPageSize(Number(e.target.value))}
+              className="px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-700 bg-white focus:outline-none"
+            >
+              <option value={10}>10</option>
+              <option value={20}>20</option>
+              <option value={50}>50</option>
+              <option value={100}>100</option>
+            </select>
+            <span className="text-xs text-slate-400">
+              Jami: {totalItems} ta manzil ({startIndex + 1} - {endIndex})
+            </span>
+          </div>
+
+          {/* Prev / Next controls */}
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
+              disabled={currentPage === 1}
+              className={`px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium flex items-center space-x-1 ${
+                currentPage === 1
+                  ? 'text-slate-300 bg-slate-50 cursor-not-allowed'
+                  : 'text-slate-600 hover:bg-slate-50 text-slate-700 cursor-pointer'
+              }`}
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+              <span>Oldingi</span>
+            </button>
+
+            <span className="px-2 text-xs font-semibold text-slate-600">
+              {currentPage} / {totalPages}
+            </span>
+
+            <button
+              onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium flex items-center space-x-1 ${
+                currentPage === totalPages
+                  ? 'text-slate-300 bg-slate-50 cursor-not-allowed'
+                  : 'text-slate-600 hover:bg-slate-50 text-slate-700 cursor-pointer'
+              }`}
+            >
+              <span>Keyingi</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Ma'lumotlarni yuklab olish oynasi (Pastki qismida qo'shildi) */}
+      <div className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+          <div className="flex items-center space-x-3">
+            <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 flex-shrink-0">
+              <FileSpreadsheet className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-sm font-bold text-slate-800">
+                Ma'lumotlarni yuklab olish (Excel formati)
+              </h2>
+              <p className="text-[11px] text-slate-500">
+                Hududlar kesimida yoki to'liq reestr bo'yicha manzil ma'lumotlarini Excel (.xlsx/.csv) formatida yuklab oling
+              </p>
+            </div>
+          </div>
+          <div className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 w-fit">
+            Yuklash uchun tayyor: {exportCount} ta manzil
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-end">
+          <div className="md:col-span-2">
+            <label className="block text-[11px] font-semibold text-slate-600 mb-1">
+              Hudud bo'yicha filtrlash:
+            </label>
+            <select
+              value={exportRegion}
+              onChange={e => setExportRegion(e.target.value)}
+              className="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs bg-white text-slate-700 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+            >
+              <option value="all">Barcha hududlar (O'zbekiston Respublikasi bo'yicha to'liq)</option>
+              {UZBEKISTAN_REGIONS.map(reg => (
+                <option key={reg} value={reg}>
+                  {reg}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <button
+              onClick={handleDownloadExcel}
+              className="w-full bg-[#107c41] hover:bg-[#0b5c30] active:bg-[#084524] text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs flex items-center justify-center space-x-2 transition-all cursor-pointer"
+            >
+              <FileSpreadsheet className="w-4 h-4 text-white" />
+              <span>Excel ko'rinishda yuklash</span>
+            </button>
+          </div>
         </div>
       </div>
+
     </div>
   );
 };

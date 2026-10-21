@@ -196,7 +196,7 @@ app.post('/api/auth/accept-terms', (req: Request, res: Response) => {
 
 // Get addresses with search and filtering
 app.get('/api/addresses', (req: Request, res: Response) => {
-  const { q, region, district, status, objectType } = req.query as Record<string, string>;
+  const { q, region, district, mahalla, streetName, houseNumber, cadastreNumber, usageType, status, objectType } = req.query as Record<string, string>;
   let list = db.getAddresses();
 
   if (status && status !== 'all') {
@@ -207,6 +207,21 @@ app.get('/api/addresses', (req: Request, res: Response) => {
   }
   if (district && district !== 'all') {
     list = list.filter(a => a.district === district);
+  }
+  if (mahalla && mahalla !== 'all') {
+    list = list.filter(a => (a as any).mahalla && (a as any).mahalla.toLowerCase().includes(mahalla.toLowerCase()));
+  }
+  if (streetName && streetName !== 'all') {
+    list = list.filter(a => a.streetName && a.streetName.toLowerCase().includes(streetName.toLowerCase()));
+  }
+  if (houseNumber) {
+    list = list.filter(a => a.houseNumber && a.houseNumber.toLowerCase().includes(houseNumber.toLowerCase()));
+  }
+  if (cadastreNumber) {
+    list = list.filter(a => a.cadastreNumber && a.cadastreNumber.toLowerCase().includes(cadastreNumber.toLowerCase()));
+  }
+  if (usageType && usageType !== 'all') {
+    list = list.filter(a => (a as any).usageType === usageType || a.objectType === usageType);
   }
   if (objectType && objectType !== 'all') {
     list = list.filter(a => a.objectType === objectType);

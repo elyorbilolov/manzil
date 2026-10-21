@@ -81,7 +81,18 @@ export const api = {
     }>('/stats'),
 
   // Addresses
-  getAddresses: (params?: { q?: string; region?: string; district?: string; status?: string; objectType?: string }) => {
+  getAddresses: (params?: {
+    q?: string;
+    cadastreNumber?: string;
+    region?: string;
+    district?: string;
+    mahalla?: string;
+    streetName?: string;
+    houseNumber?: string;
+    usageType?: string;
+    status?: string;
+    objectType?: string;
+  }) => {
     const query = new URLSearchParams(params as any).toString();
     return fetchJson<{ success: boolean; count: number; addresses: Address[] }>(`/addresses?${query}`);
   },

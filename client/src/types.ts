@@ -70,6 +70,7 @@ export interface Address {
   region: string;
   district: string;
   postalCode: string;
+  mahalla?: string;
   planningStructureType?: PlanningStructureType;
   planningStructureName?: string;
   streetType: StreetType;
@@ -81,6 +82,8 @@ export interface Address {
   fullAddressUzCyrillic: string;
   fullAddressRu: string;
   objectType: 'turar_joy' | 'noturar' | 'yer_uchastkasi';
+  usageType?: string;
+  source?: string;
   lat: number;
   lng: number;
   boundaryPolygon?: [number, number][];

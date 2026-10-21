@@ -133,8 +133,13 @@ export function handleMockRequest(url: string, options?: RequestInit): any {
   if (pathname === '/addresses' && method === 'GET') {
     let list = [...db.addresses];
     const q = searchParams.get('q');
+    const cadastreNumber = searchParams.get('cadastreNumber');
     const region = searchParams.get('region');
     const district = searchParams.get('district');
+    const mahalla = searchParams.get('mahalla');
+    const streetName = searchParams.get('streetName');
+    const houseNumber = searchParams.get('houseNumber');
+    const usageType = searchParams.get('usageType');
     const status = searchParams.get('status');
     const objectType = searchParams.get('objectType');
 
@@ -147,10 +152,17 @@ export function handleMockRequest(url: string, options?: RequestInit): any {
           (a.cadastreNumber && a.cadastreNumber.toLowerCase().includes(qLow))
       );
     }
-    if (region) list = list.filter((a: any) => a.region === region);
-    if (district) list = list.filter((a: any) => a.district === district);
-    if (status) list = list.filter((a: any) => a.status === status);
-    if (objectType) list = list.filter((a: any) => a.objectType === objectType);
+    if (cadastreNumber) {
+      list = list.filter((a: any) => a.cadastreNumber && a.cadastreNumber.toLowerCase().includes(cadastreNumber.toLowerCase()));
+    }
+    if (region && region !== 'all') list = list.filter((a: any) => a.region === region);
+    if (district && district !== 'all') list = list.filter((a: any) => a.district === district);
+    if (mahalla && mahalla !== 'all') list = list.filter((a: any) => a.mahalla && a.mahalla.toLowerCase().includes(mahalla.toLowerCase()));
+    if (streetName && streetName !== 'all') list = list.filter((a: any) => a.streetName && a.streetName.toLowerCase().includes(streetName.toLowerCase()));
+    if (houseNumber) list = list.filter((a: any) => a.houseNumber && a.houseNumber.toLowerCase().includes(houseNumber.toLowerCase()));
+    if (usageType && usageType !== 'all') list = list.filter((a: any) => a.usageType === usageType || a.objectType === usageType);
+    if (status && status !== 'all') list = list.filter((a: any) => a.status === status);
+    if (objectType && objectType !== 'all') list = list.filter((a: any) => a.objectType === objectType);
 
     return { success: true, count: list.length, addresses: list };
   }
