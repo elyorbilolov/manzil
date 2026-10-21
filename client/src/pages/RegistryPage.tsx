@@ -240,24 +240,13 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
           <h1 className="text-xl font-bold text-slate-800 tracking-wide uppercase">
             REYESTR
           </h1>
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={handleDownloadExcel}
-              title="Tanlangan parametrlar bo'yicha Excel formatida yuklab olish"
-              className="bg-[#107c41] hover:bg-[#0b5c30] text-white font-semibold text-xs px-3.5 py-2 rounded-xl shadow-xs flex items-center space-x-1.5 transition-all cursor-pointer"
-            >
-              <FileSpreadsheet className="w-3.5 h-3.5 text-white" />
-              <span>Excel ko'rinishida yuklash</span>
-            </button>
-
-            <button
-              onClick={loadData}
-              title="Yangilash"
-              className="p-2 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors"
-            >
-              <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-blue-600' : ''}`} />
-            </button>
-          </div>
+          <button
+            onClick={loadData}
+            title="Yangilash"
+            className="p-2 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
+          >
+            <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-blue-600' : ''}`} />
+          </button>
         </div>
 
         {/* Filter Bar (1:1 with user screenshot + Uy raqami) */}
@@ -477,7 +466,7 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
             <select
               value={pageSize}
               onChange={e => setPageSize(Number(e.target.value))}
-              className="px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-700 bg-white focus:outline-none"
+              className="px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-700 bg-white focus:outline-none cursor-pointer"
             >
               <option value={10}>10</option>
               <option value={20}>20</option>
@@ -489,7 +478,18 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
             </span>
           </div>
 
-          {/* Prev / Next controls */}
+          {/* Excel ko'rinishida yuklash tugmasi (O'rtaga olib kelindi) */}
+          <div>
+            <button
+              onClick={handleDownloadExcel}
+              className="w-full sm:w-auto bg-[#107c41] hover:bg-[#0b5c30] active:bg-[#084524] text-white font-bold text-xs px-4 py-2 rounded-xl shadow-xs flex items-center justify-center space-x-2 transition-all cursor-pointer"
+            >
+              <FileSpreadsheet className="w-4 h-4 text-white" />
+              <span>Excel ko'rinishida yuklash</span>
+            </button>
+          </div>
+
+          {/* Prev / Next controls (O'ng burchakka olib o'tildi) */}
           <div className="flex items-center space-x-2">
             <button
               onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
@@ -519,17 +519,6 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
             >
               <span>Keyingi</span>
               <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-
-          {/* Excel ko'rinishida yuklash tugmasi */}
-          <div>
-            <button
-              onClick={handleDownloadExcel}
-              className="w-full sm:w-auto bg-[#107c41] hover:bg-[#0b5c30] active:bg-[#084524] text-white font-bold text-xs px-4 py-2 rounded-xl shadow-xs flex items-center justify-center space-x-2 transition-all cursor-pointer"
-            >
-              <FileSpreadsheet className="w-4 h-4 text-white" />
-              <span>Excel ko'rinishida yuklash</span>
             </button>
           </div>
         </div>
