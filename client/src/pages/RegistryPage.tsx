@@ -5,14 +5,8 @@ import { useAuth } from '../context/AuthContext';
 import {
   Eye,
   FileSpreadsheet,
-  Download,
   ChevronLeft,
   ChevronRight,
-  Filter,
-  CheckCircle,
-  XCircle,
-  Award,
-  MapPin,
   RefreshCw,
 } from 'lucide-react';
 
@@ -63,9 +57,6 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
   const [pageSize, setPageSize] = useState<number>(20);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  // Download section
-  const [exportRegion, setExportRegion] = useState<string>('all');
-
   const loadData = async () => {
     setLoading(true);
     try {
@@ -114,7 +105,7 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
     return Array.from(new Set(list));
   }, [addresses]);
 
-  // Filter addresses
+  // Filter addresses according to the top filters
   const filteredAddresses = useMemo(() => {
     return addresses.filter(item => {
       if (cadastreFilter.trim()) {
@@ -186,14 +177,12 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
     pageSize,
   ]);
 
-  // Export to Excel / CSV
+  // Export to Excel / CSV based on current filters
   const handleDownloadExcel = () => {
-    const listToExport = exportRegion === 'all'
-      ? addresses
-      : addresses.filter(a => a.region === exportRegion);
+    const listToExport = filteredAddresses.length > 0 ? filteredAddresses : addresses;
 
     if (listToExport.length === 0) {
-      alert("Tanlangan hudud bo'yicha manzillar topilmadi.");
+      alert("Eksport qilish uchun filtr bo'yicha manzillar topilmadi.");
       return;
     }
 
@@ -225,14 +214,14 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
       `"${a.status === 'active' ? 'Faol' : 'Bekor qilingan'}"`,
     ]);
 
-    // CSV format with UTF-8 BOM so Excel opens it in Uzbek Cyrillic/Latin without encoding corruption
+    // CSV format with UTF-8 BOM so Excel opens it directly without encoding issues
     const csvContent =
       '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\r\n');
 
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
-    const safeRegion = exportRegion === 'all' ? 'barcha_hududlar' : exportRegion.replace(/[^a-zA-Z0-9]/g, '_');
+    const safeRegion = regionFilter === 'all' ? 'barcha_hududlar' : regionFilter.replace(/[^a-zA-Z0-9]/g, '_');
     link.setAttribute('href', url);
     link.setAttribute('download', `Manzillar_Reestri_${safeRegion}_${new Date().toISOString().split('T')[0]}.csv`);
     document.body.appendChild(link);
@@ -241,29 +230,34 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
     URL.revokeObjectURL(url);
   };
 
-  const exportCount = useMemo(() => {
-    return exportRegion === 'all'
-      ? addresses.length
-      : addresses.filter(a => a.region === exportRegion).length;
-  }, [addresses, exportRegion]);
-
   return (
     <div className="space-y-4">
       {/* Container Card */}
       <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs p-6 space-y-5">
         
-        {/* Title */}
+        {/* Title & Actions */}
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-bold text-slate-800 tracking-wide uppercase">
             REYESTR
           </h1>
-          <button
-            onClick={loadData}
-            title="Yangilash"
-            className="p-1.5 rounded-lg border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors"
-          >
-            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-blue-600' : ''}`} />
-          </button>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={handleDownloadExcel}
+              title="Tanlangan parametrlar bo'yicha Excel formatida yuklab olish"
+              className="bg-[#107c41] hover:bg-[#0b5c30] text-white font-semibold text-xs px-3.5 py-2 rounded-xl shadow-xs flex items-center space-x-1.5 transition-all cursor-pointer"
+            >
+              <FileSpreadsheet className="w-3.5 h-3.5 text-white" />
+              <span>Excel ko'rinishida yuklash</span>
+            </button>
+
+            <button
+              onClick={loadData}
+              title="Yangilash"
+              className="p-2 rounded-xl border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-blue-600' : ''}`} />
+            </button>
+          </div>
         </div>
 
         {/* Filter Bar (1:1 with user screenshot + Uy raqami) */}
@@ -352,7 +346,7 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
             </select>
           </div>
 
-          {/* 6. Uy raqami (ko'chalarni oldiga qo'shildi) */}
+          {/* 6. Uy raqami */}
           <div>
             <input
               type="text"
@@ -463,7 +457,7 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
                         <button
                           onClick={() => onOpenCertificate(addr.id)}
                           title="Manzil to'g'risidagi ma'lumotnoma va ko'rish"
-                          className="w-7 h-7 inline-flex items-center justify-center rounded-lg border border-[#3b82f6] text-[#2563eb] hover:bg-blue-50 transition-colors"
+                          className="w-7 h-7 inline-flex items-center justify-center rounded-lg border border-[#3b82f6] text-[#2563eb] hover:bg-blue-50 transition-colors cursor-pointer"
                         >
                           <Eye className="w-3.5 h-3.5" />
                         </button>
@@ -476,7 +470,7 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
           </div>
         </div>
 
-        {/* Pagination bar matching user screenshot */}
+        {/* Pagination & Bottom Action bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
           {/* Page size selector (Default: 20) */}
           <div className="flex items-center space-x-2">
@@ -491,7 +485,7 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
               <option value={100}>100</option>
             </select>
             <span className="text-xs text-slate-400">
-              Jami: {totalItems} ta manzil ({startIndex + 1} - {endIndex})
+              Jami: {totalItems} ta manzil ({totalItems > 0 ? startIndex + 1 : 0} - {endIndex})
             </span>
           </div>
 
@@ -527,62 +521,20 @@ export const RegistryPage: React.FC<RegistryPageProps> = ({
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
-        </div>
 
-      </div>
-
-      {/* Ma'lumotlarni yuklab olish oynasi (Pastki qismida qo'shildi) */}
-      <div className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
-          <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 flex-shrink-0">
-              <FileSpreadsheet className="w-5 h-5" />
-            </div>
-            <div>
-              <h2 className="text-sm font-bold text-slate-800">
-                Ma'lumotlarni yuklab olish (Excel formati)
-              </h2>
-              <p className="text-[11px] text-slate-500">
-                Hududlar kesimida yoki to'liq reestr bo'yicha manzil ma'lumotlarini Excel (.xlsx/.csv) formatida yuklab oling
-              </p>
-            </div>
-          </div>
-          <div className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200 w-fit">
-            Yuklash uchun tayyor: {exportCount} ta manzil
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-end">
-          <div className="md:col-span-2">
-            <label className="block text-[11px] font-semibold text-slate-600 mb-1">
-              Hudud bo'yicha filtrlash:
-            </label>
-            <select
-              value={exportRegion}
-              onChange={e => setExportRegion(e.target.value)}
-              className="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs bg-white text-slate-700 focus:outline-none focus:ring-1 focus:ring-emerald-500"
-            >
-              <option value="all">Barcha hududlar (O'zbekiston Respublikasi bo'yicha to'liq)</option>
-              {UZBEKISTAN_REGIONS.map(reg => (
-                <option key={reg} value={reg}>
-                  {reg}
-                </option>
-              ))}
-            </select>
-          </div>
-
+          {/* Excel ko'rinishida yuklash tugmasi */}
           <div>
             <button
               onClick={handleDownloadExcel}
-              className="w-full bg-[#107c41] hover:bg-[#0b5c30] active:bg-[#084524] text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs flex items-center justify-center space-x-2 transition-all cursor-pointer"
+              className="w-full sm:w-auto bg-[#107c41] hover:bg-[#0b5c30] active:bg-[#084524] text-white font-bold text-xs px-4 py-2 rounded-xl shadow-xs flex items-center justify-center space-x-2 transition-all cursor-pointer"
             >
               <FileSpreadsheet className="w-4 h-4 text-white" />
-              <span>Excel ko'rinishda yuklash</span>
+              <span>Excel ko'rinishida yuklash</span>
             </button>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   );
 };
